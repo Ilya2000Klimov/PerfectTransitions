@@ -6,8 +6,10 @@ title:  Team
 # {{ page.title }}
 
 
-## USER 1
+## Ilya KLimov
+![Ilya KLimov Picture](./res/Ilya_Klimov.jpg)
 ***UCI Net ID***: iklimov
+[GitHub](https://github.com/ilya2000klimov) | [LinkedIn](https://www.linkedin.com/in/Ilya2K)
 
 ## USER 2
 ***UCI Net ID***: zhuominh
