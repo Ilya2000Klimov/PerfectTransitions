@@ -8,6 +8,7 @@ Source code: https://github.com/ilya2000klimov/PerfectTransitions
 Reports:
 
 - [Proposal](proposal.html)
+- [Tools](tools.md)
 - [Status](status.html)
 - [Final](final.html)
 
