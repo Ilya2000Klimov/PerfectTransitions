@@ -11,3 +11,7 @@ title: Status
 ## Remaining Goals and Challenges
 
 ### Crossfade
+
+### Interactive Interface
+
+### Music app integration
