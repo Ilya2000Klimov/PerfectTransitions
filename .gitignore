@@ -1,0 +1,3 @@
+# Ignore everything inside the data folder
+data/*
+model_checkpoints/BEATs_iter3_plus_AS2M.pt
