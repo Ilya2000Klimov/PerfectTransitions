@@ -152,23 +152,23 @@ due, to what degree you expected to become obstacles, and what you might try in 
 overcome them. -->
 This is only the base implementation of the project, it still left many things to be desired both in functional performance and usability. 
 
-### **Two-Stage Embedding (Separate Start & End)**
+#### **Two-Stage Embedding (Separate Start & End)**
 
 - Optimize **embedding separation** for better **sequence learning**.
 
-### **Predicting Next Music Segment for Seamless Transitions**
+#### **Predicting Next Music Segment for Seamless Transitions**
 
 - Introduce a **diffusion model** for transition refinement.
 
-### **Optimizing Crossfade Durations to Find the Best Seamless Song Transition**
+#### **Optimizing Crossfade Durations to Find the Best Seamless Song Transition**
 
 - Fine-tune the **best fade-in/fade-out durations** for **seamless audio blending**.
 
-### **Interactive Interface**
+#### **Interactive Interface**
 
 - Create a **demo UI** to **visualize transitions** and allow user feedback.
 
-### **Music App Integration**
+#### **Music App Integration**
 
 - Test deployment into **Spotify/YouTube DJ playlists** or **local audio mixing software**.
 
