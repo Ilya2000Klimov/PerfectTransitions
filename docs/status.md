@@ -22,10 +22,10 @@ The approach consists of three main components:
 The dataset consists of **full-length songs** (from the **FMA dataset**), which are preprocessed by **segmenting them into 20-30 second clips** with **overlapping context** to preserve musical continuity. The final goal is to deploy this model for **automatic DJing, playlist blending, and AI-generated song transitions**.
 
 
-## Approach
+## **Approach**
 The goal is to create a seamless transition between two songs, as if they were part of the same piece. To create such a transition, we must identify a song whose beginning complements the ending of the previous song, making them sound unified.
 
-### **1. Feature Extraction Using BEATs Iteration 3**
+### 1. Feature Extraction Using BEATs Iteration 3
 Music data are highly complex and has a high-dimensional feature space, it includes multiple features such as timbre, tone, tempo, mood, key, progression scale, and etc...
 
 In order to simplify the high-dimensional feature space and extract data that are easier to process, we used embedding to reduce the dimensionality while preserving the essential characteristics of the music.
@@ -46,7 +46,7 @@ We used the open FMA database which contains 106,574 untrimmed tracks with 161 u
 - Embeddings are extracted and stored in **/NFS/dataset/embeddings/**.
 - A **checkpointing system** ensures the process resumes from where it left off if interrupted.
 
-### **2. Training the LSTM for Transition Prediction**
+### 2. Training the LSTM for Transition Prediction
 To achieve a seamless transition, we need to determine what group of songs, when paired with the ending of the previous track, will blend seamlessly.
 
 To address this challenge, we decided to train an AI model that predicts how a song will continue based on a given section. We adopted the Long Short-Term Memory (LSTM) model to train on music/audio data, enabling it to forecast the continuation of input audio clips.
@@ -78,7 +78,7 @@ Training is performed on **SLURM** using GPU nodes, with **checkpointing enabled
 
 <img src="./res/Project_outline.jpg" alt="Project Outline" width="852" height="602">
 
-### **3. Transition Matching & Deployment**
+### 3. Transition Matching & Deployment
 
 After training, the model will take a clip’s final embedding and produce the predicted continuing segment. Then the model will use FAISS(Facebook AI Similarity Search) to find the nearest neighbor of the predicted continuing segment in vector space. In this case, it will find the song that matches the most closely with the model predicted continuing segment. ONNX & PyTorch JIT are explored for fast inference deployment.
 
@@ -86,7 +86,7 @@ After training, the model will take a clip’s final embedding and produce the p
 - **FAISS (Facebook AI Similarity Search)** is used for **efficient retrieval**.
 - **ONNX & PyTorch JIT** are explored for **fast inference deployment**.
 
-### **4. Evaluation Metrics**
+### 4. Evaluation Metrics
 <!-- Might include 2 parts: how well the AI predict the continuation of the song and how well the actual transition worked -->
 
 
@@ -111,7 +111,7 @@ how you tune them and the numbers you end up using). A good guideline is to inco
 sufficient details so that most of your approach is reproducible by a reader. You're encouraged
 to use figures for this, as appropriate, e.g. as we used in the exercises. -->
 
-## Evaluation
+## **Evaluation**
 
 <!-- An important aspect of your project, as we mentioned in the beginning, is
 evaluating your project. Be clear and precise about describing the evaluation setup, for both
@@ -124,13 +124,13 @@ There has been a change in evaluation method from the proposal. We originally me
 
 We assess both **quantitative model accuracy** and **qualitative smoothness of music transitions** in following ways:
 
-### **Quantitative Evaluation**
+### Quantitative Evaluation
 
 - **Triplet Loss Curve:** Monitor loss decrease over training epochs.
 - **Cosine Similarity Distribution:** Compare the similarity of correct vs. incorrect transitions.
 - **LSTM Loss Convergence:** Validate that the model improves over time.
 
-### **Qualitative Evaluation**
+### Evaluation
 
 - **Random vs. Learned Transitions:** Compare our model’s transitions to **randomly shuffled segments**.
 - **Spectrogram Alignment:** Ensure frequency-domain continuity.
@@ -139,7 +139,7 @@ We assess both **quantitative model accuracy** and **qualitative smoothness of m
 All evaluations are **logged in Weights & Biases (W&B)** for experiment tracking.
 
 
-## Remaining Goals and Challenges
+## **Remaining Goals and Challenges**
 <!-- In a few paragraphs, describe your goals for the remainder
 of the quarter. At the very least, describe how you consider your prototype to be limited,
 and what you want to add to make it a complete contribution. Note that if you think your
@@ -152,28 +152,28 @@ due, to what degree you expected to become obstacles, and what you might try in 
 overcome them. -->
 This is only the base implementation of the project, it still left many things to be desired both in functional performance and usability. 
 
-#### **Two-Stage Embedding (Separate Start & End)**
+### Two-Stage Embedding (Separate Start & End)
 
 - Optimize **embedding separation** for better **sequence learning**.
 
-#### **Predicting Next Music Segment for Seamless Transitions**
+### Predicting Next Music Segment for Seamless Transitions
 
 - Introduce a **diffusion model** for transition refinement.
 
-#### **Optimizing Crossfade Durations to Find the Best Seamless Song Transition**
+### Optimizing Crossfade Durations to Find the Best Seamless Song Transition
 
 - Fine-tune the **best fade-in/fade-out durations** for **seamless audio blending**.
 
-#### **Interactive Interface**
+### Interactive Interface
 
 - Create a **demo UI** to **visualize transitions** and allow user feedback.
 
-#### **Music App Integration**
+### Music App Integration
 
 - Test deployment into **Spotify/YouTube DJ playlists** or **local audio mixing software**.
 
 
-## Resources Used
+## **Resources Used**
 
 <!-- Mention all the resources that you found useful in writing your implemen-
 tation. This should include everything like code documentation, AI/ML libraries, source
@@ -181,7 +181,7 @@ code that you used, StackOverflow, etc. You do not have to be comprehensive, but
 important to report the sources that are crucial to your project. One aspect that does need to
 be comprehensive is a description of any use you made of AI tools. -->
 
-### **Research Papers & Code**
+### Research Papers & Code
 
 - **BEATs Transformer Model** (Microsoft UniLM):
   - [GitHub](https://github.com/microsoft/unilm/tree/master/beats)
@@ -191,7 +191,7 @@ be comprehensive is a description of any use you made of AI tools. -->
   - [Faiss: Facebook AI Similarity Search](https://github.com/facebookresearch/faiss)
   - [Shazam Music Processing Fingerprinting and Recognition] (https://www.toptal.com/algorithms/shazam-it-music-processing-fingerprinting-and-recognition)
 
-### **Libraries & Tools**
+### Libraries & Tools
 
 - **Torch + Torchaudio** (Feature extraction, LSTM training)
 - **FAISS** (Fast similarity retrieval)
@@ -199,7 +199,7 @@ be comprehensive is a description of any use you made of AI tools. -->
 - **SLURM + HPC Cluster** (Model training)
 - **Weights & Biases (W&B)** (Experiment logging)
 
-### **Infrastructure**
+### Infrastructure
 
 - **Dataset:** FMA (Full-Sized Songs)
 - **Cluster:** **Nvidia A100 & V100 GPUs, 100Gb/s InfiniBand**
