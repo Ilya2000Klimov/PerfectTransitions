@@ -10,12 +10,12 @@
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=<YOUR_EMAIL>
 
-module purge
-module load cuda/11.7
-module load python/3.9
+# module purge
+# module load cuda/11.7
+# module load python/3.9
 
 # Activate environment
-source activate myenv
+source conda activate PT
 
 echo "Starting LSTM training job on $HOSTNAME"
 

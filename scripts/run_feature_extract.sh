@@ -7,30 +7,23 @@
 #SBATCH --time=4:00:00                # 4 hours max
 #SBATCH --output=SLURMlogs/feature_extract_%j.out
 #SBATCH --error=SLURMlogs/feature_extract_%j.err
-#SBATCH --mail-type=END,FAIL          # get emails for end/fail
-#SBATCH --mail-user=<YOUR_EMAIL>       # your email address
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=Ilya2000Klimov@gmail.com
 
 # --- Load Modules/Environment ---
-# module purge
-module load cuda/12.1  # example, match your cluster's CUDA version
-module load python/3.10 # or whichever Python module is available
+module load cuda/12.1
+module load python/3.10
 
-# If you use conda or virtualenv
-source conda activate rl  # Or: conda activate myenv
+# Activate your conda environment
+source conda activate PT
 
-# Optional: If your site has a special approach for preemption, 
-# load checkpoint-resume modules or set environment variables.
-
-echo "Starting feature extraction job on $HOSTNAME"
+echo "[Info] Starting BEATs feature extraction on $HOSTNAME"
 
 # --- Run Python Script ---
-# If you have checkpoint logic in feature_extraction.py, pass --resume if needed.
-srun python scripts/feature_extraction.py \
-    --data_dir /data/dataset/fma/segments \
-    --output_dir /data/dataset/embeddings \
-    --model_checkpoint /model_checkpoints/BEATs_iter3_plus_AS2M.pt \
-    --batch_size 1 \
-    --save_freq 500 \
-    --resume_if_checkpoint_exists True
+srun python feature_extraction.py \
+    --data_dir "./../data/segments" \
+    --output_dir "./../data/embeddings" \
+    --model_checkpoint "./../model_checkpoints/BEATs_iter3_plus_AS2M.pt" \
+    --save_freq 500     --resume_if_checkpoint_exists True
 
-echo "Feature extraction job completed."
+echo "[Info] Feature extraction job completed."

@@ -2,17 +2,16 @@ import os
 import argparse
 import numpy as np
 import torch
-import torchaudio
+import librosa
 
 import sys
 sys.path.append('/data/class/cs175/iklimov/unilm/beats')
 
-import BEATs  # Now you can import BEATs correctly
-# ------------------------------------------------------------------------
-# Official approach to loading the BEATs model
-# ------------------------------------------------------------------------
 from BEATs import BEATs, BEATsConfig
 
+############################################################
+# 1) BEATs Model Loader
+############################################################
 def load_beats_model(checkpoint_path):
     """
     Load a pre-trained or fine-tuned BEATs model from a .pt checkpoint.
@@ -23,62 +22,66 @@ def load_beats_model(checkpoint_path):
     cfg = BEATsConfig(checkpoint['cfg'])
     model = BEATs(cfg)
     model.load_state_dict(checkpoint['model'])
-    model.eval()  # set to inference mode
+    model.eval()  # inference mode
     return model
 
+############################################################
+# 2) Audio -> Embeddings (Librosa-based)
+############################################################
 def compute_beats_embeddings(audio_path, model, device, sr=16000, mono=True):
     """
-    1) Load an audio file with torchaudio.
-    2) Resample to `sr`.
+    1) Load an audio file with librosa.
+    2) Resample to `sr` if not already.
     3) Convert to mono (if `mono=True`).
     4) Use model.extract_features(...) to get the audio representation.
     5) Return a (T x D) numpy array of embeddings.
     """
+    # 1) Load audio with librosa.
+    #    - sr=16000 means librosa will resample if needed.
+    #    - mono=True means we reduce everything to 1 channel.
+    y, source_sr = librosa.load(audio_path, sr=sr, mono=mono)
 
-    # Load audio
-    waveform, source_sr = torchaudio.load(audio_path)
+    # 2) Convert to torch Tensor
+    #    If mono=True, y.shape -> (num_samples,)
+    #    If mono=False, y.shape -> (num_channels, num_samples)
+    if y.ndim == 1:
+        # shape (num_samples,)
+        waveform = torch.from_numpy(y).unsqueeze(0)  # -> (1, num_samples)
+    else:
+        # shape (num_channels, num_samples)
+        waveform = torch.from_numpy(y)
 
-    # Convert to mono if needed
-    if mono and waveform.shape[0] > 1:
-        waveform = waveform.mean(dim=0, keepdim=True)
+    waveform = waveform.to(device)
 
-    # Resample if necessary
-    if source_sr != sr:
-        resampler = torchaudio.transforms.Resample(orig_freq=source_sr, new_freq=sr)
-        waveform = resampler(waveform)
+    # 3) Expand for BEATs (batch dimension)
+    #    Now shape = (batch=1, num_channels, num_samples)
+    waveform = waveform.unsqueeze(0)
 
-    # waveform shape: [1, num_samples]
-    # For BEATs, we need shape: [batch, num_samples], so let's add batch_dim = 1
-    waveform = waveform.to(device)  # Move to CPU or GPU
-    waveform = waveform.unsqueeze(0)  # (1, 1, num_samples)
+    # 4) Create a padding mask [batch, num_samples]
+    #    The model expects no padding if entire clip is valid
+    padding_mask = torch.zeros((1, waveform.shape[-1]), dtype=torch.bool, device=device)
 
-    # No padding needed if the entire clip is valid
-    # But we do create a boolean mask of shape [1, num_samples]
-    padding_mask = torch.zeros((1, waveform.size(-1)), dtype=torch.bool, device=device)
-
-    # Extract features
+    # 5) Extract features with no grad
     with torch.no_grad():
-        # extract_features returns a tuple: (features, _) or just (features),
-        # depending on the model version. We'll assume it's (features, layer_results)
-        # features[0] is the final-layer feature map: shape [1, T, D]
-        features_tuple = model.extract_features(waveform, padding_mask=padding_mask)
-        # The first element in the returned tuple is the final-layer representation
-        # If it's just one element, do: features = features_tuple[0]
-        # If it's two elements (features, layer_results), we want features.
-        # We'll handle both cases safely:
-        if isinstance(features_tuple, (list, tuple)) and len(features_tuple) >= 1:
-            features = features_tuple[0]
+        out_tuple = model.extract_features(waveform, padding_mask=padding_mask)
+        # out_tuple might be (features, layer_results) or just features.
+        if isinstance(out_tuple, (list, tuple)) and len(out_tuple) >= 1:
+            feats = out_tuple[0]  # shape: (1, T, D)
         else:
-            features = features_tuple  # If the model returns just the features
+            feats = out_tuple
 
-    # features shape: [1, T, D]
-    features = features.squeeze(0)  # -> [T, D]
-    return features.cpu().numpy()
+    # shape: [1, T, D]
+    feats = feats.squeeze(0)  # (T, D)
 
+    return feats.cpu().numpy()
+
+############################################################
+# 3) Arg Parsing
+############################################################
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--data_dir", type=str, required=True,
-                        help="Path to directory of segmented audio files (wav, flac, mp3).")
+                        help="Path to directory of segmented audio files.")
     parser.add_argument("--output_dir", type=str, required=True,
                         help="Where to store .npy embeddings.")
     parser.add_argument("--model_checkpoint", type=str, required=True,
@@ -89,6 +92,9 @@ def parse_args():
                         help="Resume if previous state file found.")
     return parser.parse_args()
 
+############################################################
+# 4) Main
+############################################################
 def main():
     args = parse_args()
 
@@ -103,8 +109,8 @@ def main():
 
     # 3) Gather audio files
     audio_files = sorted([
-        os.path.join(args.data_dir, f) 
-        for f in os.listdir(args.data_dir) 
+        os.path.join(args.data_dir, f)
+        for f in os.listdir(args.data_dir)
         if f.lower().endswith((".wav", ".flac", ".mp3"))
     ])
     print(f"[Info] Found {len(audio_files)} audio files in {args.data_dir}")

@@ -3,6 +3,7 @@ import argparse
 import torchaudio
 import torch
 
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input_dir", type=str, required=True,
@@ -72,6 +73,7 @@ def segment_audio(audio_path, output_dir, segment_length=25.0, overlap=5.0, targ
         print(f"Saved: {segment_path}")
 
 def main():
+    torchaudio.set_audio_backend("sox_io")
     args = parse_args()
 
     # Process all songs in input directory
