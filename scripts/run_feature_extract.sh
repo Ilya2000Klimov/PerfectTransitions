@@ -12,8 +12,8 @@
 
 # --- Load Modules/Environment ---
 # module purge
-module load cuda/12.2  # example, match your cluster's CUDA version
-module load python/3.11 # or whichever Python module is available
+module load cuda/12.1  # example, match your cluster's CUDA version
+module load python/3.10 # or whichever Python module is available
 
 # If you use conda or virtualenv
 source conda activate rl  # Or: conda activate myenv
