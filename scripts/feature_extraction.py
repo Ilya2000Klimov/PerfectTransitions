@@ -40,7 +40,7 @@ def compute_beats_embeddings(audio_path, model, device, sr=16000, mono=True):
     #    - sr=16000 means librosa will resample if needed.
     #    - mono=True means we reduce everything to 1 channel.
     y, source_sr = librosa.load(audio_path, sr=sr, mono=mono)
-
+    print(f"[Debug] Loaded audio from {audio_path} with shape {y.shape} and sample rate {source_sr}")
     # 2) Convert to torch Tensor
     #    If mono=True, y.shape -> (num_samples,)
     #    If mono=False, y.shape -> (num_channels, num_samples)
@@ -53,17 +53,20 @@ def compute_beats_embeddings(audio_path, model, device, sr=16000, mono=True):
 
     waveform = waveform.to(device)
 
-    # 3) Expand for BEATs (batch dimension)
-    #    Now shape = (batch=1, num_channels, num_samples)
-    waveform = waveform.unsqueeze(0)
+    # # 3) Expand for BEATs (batch dimension)
+    # #    Now shape = (batch=1, num_channels, num_samples)
+    # waveform = waveform.unsqueeze(0)
 
     # 4) Create a padding mask [batch, num_samples]
     #    The model expects no padding if entire clip is valid
     padding_mask = torch.zeros((1, waveform.shape[-1]), dtype=torch.bool, device=device)
 
+
     # 5) Extract features with no grad
     with torch.no_grad():
+        print(f"[Debug] Waveform shape: {waveform.shape}, Padding mask shape: {padding_mask.shape}")
         out_tuple = model.extract_features(waveform, padding_mask=padding_mask)
+        print(f"[Debug] Loaded audio from {audio_path}, After model extraction tuple == {out_tuple}" )
         # out_tuple might be (features, layer_results) or just features.
         if isinstance(out_tuple, (list, tuple)) and len(out_tuple) >= 1:
             feats = out_tuple[0]  # shape: (1, T, D)

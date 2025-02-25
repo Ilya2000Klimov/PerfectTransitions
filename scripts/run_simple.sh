@@ -11,8 +11,8 @@
 #SBATCH --mail-type=END,FAIL          # get emails for end/fail
 #SBATCH --mail-user=Ilya2000Klimov@gmail.com       # your email address
 
-pip install torch torchaudio fairseq pyyaml
-pip install git+https://github.com/microsoft/unilm/tree/master/beats
-pip install librosa soundfile numpy
+conda install --force-reinstall numpy scipy librosa torch torchaudio
+
+
 
 
