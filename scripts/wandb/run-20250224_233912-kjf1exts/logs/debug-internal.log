@@ -1,0 +1,16 @@
+{"time":"2025-02-24T23:39:12.987774214-08:00","level":"INFO","msg":"stream: starting","core version":"0.19.7.dev1","symlink path":"/data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250224_233912-kjf1exts/logs/debug-core.log"}
+{"time":"2025-02-24T23:39:13.101690039-08:00","level":"INFO","msg":"created new stream","id":"kjf1exts"}
+{"time":"2025-02-24T23:39:13.101718907-08:00","level":"INFO","msg":"stream: started","id":"kjf1exts"}
+{"time":"2025-02-24T23:39:13.101730629-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"kjf1exts"}
+{"time":"2025-02-24T23:39:13.101740804-08:00","level":"INFO","msg":"handler: started","stream_id":"kjf1exts"}
+{"time":"2025-02-24T23:39:13.101914106-08:00","level":"INFO","msg":"sender: started","stream_id":"kjf1exts"}
+{"time":"2025-02-24T23:39:13.236557953-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-24T23:43:25.313074245-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-24T23:43:25.313699909-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-24T23:43:26.276578865-08:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading lstm_checkpoint.pt","runtime_seconds":0.210057683,"progress":"15.4MB/15.4MB"}],"total_operations":1}}
+{"time":"2025-02-24T23:43:26.466017478-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-24T23:43:27.604824101-08:00","level":"INFO","msg":"stream: closing","id":"kjf1exts"}
+{"time":"2025-02-24T23:43:27.604838707-08:00","level":"INFO","msg":"handler: closed","stream_id":"kjf1exts"}
+{"time":"2025-02-24T23:43:27.604846146-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"kjf1exts"}
+{"time":"2025-02-24T23:43:27.604857786-08:00","level":"INFO","msg":"sender: closed","stream_id":"kjf1exts"}
+{"time":"2025-02-24T23:43:27.605128467-08:00","level":"INFO","msg":"stream: closed","id":"kjf1exts"}

@@ -54,7 +54,7 @@ def segment_audio(audio_path, output_dir, segment_length=25.0, overlap=5.0, targ
     total_samples = waveform.shape[1]  # Total number of samples in the song
     num_segments = (total_samples - overlap_samples) // step_size
 
-    print(f"Processing '{audio_path}' -> {num_segments} segments.")
+    print(f"  ↳ Processing '{os.path.basename(audio_path)}' ({num_segments} segments)")
 
     # Save each segment
     for i in range(num_segments):
@@ -77,10 +77,16 @@ def main():
     args = parse_args()
 
     # Process all songs in input directory
-    for file in os.listdir(args.input_dir):
-        if file.lower().endswith((".wav", ".mp3", ".flac")):
-            song_path = os.path.join(args.input_dir, file)
-            segment_audio(song_path, args.output_dir, args.segment_length, args.overlap, args.target_sr)
+    for root, _, files in os.walk(args.input_dir):
+        relative_path = os.path.relpath(root, args.input_dir)
+        sub_output_dir = os.path.join(args.output_dir, relative_path)
+
+        # Print formatted output when entering a new directory
+        print(f"\n📂 Entering directory: {root}")
+        for file in files:
+            if file.lower().endswith((".wav", ".mp3", ".flac")):
+                song_path = os.path.join(root, file)
+                segment_audio(song_path, args.output_dir, args.segment_length, args.overlap, args.target_sr)
 
     print(f"Segmentation complete. Segmented clips saved in {args.output_dir}")
 

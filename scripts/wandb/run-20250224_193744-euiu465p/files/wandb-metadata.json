@@ -1,0 +1,103 @@
+{
+  "os":  "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "python":  "CPython 3.10.16",
+  "startedAt":  "2025-02-25T03:37:44.461763Z",
+  "args":  [
+    "--embeddings_dir",
+    "./../data/embeddings",
+    "--checkpoint_dir",
+    "./../model_checkpoints/lstm",
+    "--resume_if_checkpoint_exists",
+    "True"
+  ],
+  "program":  "/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py",
+  "codePath":  "scripts/train_lstm.py",
+  "git":  {
+    "remote":  "git@github.com:Ilya2000Klimov/PerfectTransitions.git",
+    "commit":  "abf11442db27a994f5260609dfd9206f44306c84"
+  },
+  "email":  "ilya2000klimov@gmail.com",
+  "root":  "/data/class/cs175/iklimov/PerfectTransitions/scripts",
+  "host":  "hpc3-gpu-16-01",
+  "executable":  "/data/class/cs175/iklimov/.conda/envs/PT/bin/python",
+  "codePathLocal":  "train_lstm.py",
+  "cpu_count":  40,
+  "cpu_count_logical":  40,
+  "gpu":  "Tesla V100-FHHL-16GB",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "228809453568",
+      "used":  "148384108544"
+    }
+  },
+  "memory":  {
+    "total":  "201930723328"
+  },
+  "cpu":  {
+    "count":  40,
+    "countLogical":  40
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Tesla V100-FHHL-16GB",
+      "memoryTotal":  "17179869184",
+      "cudaCores":  5120,
+      "architecture":  "Volta"
+    }
+  ],
+  "slurm":  {
+    "cluster_name":  "hpc3",
+    "conf":  "/etc/slurm/slurm.conf",
+    "cpus_on_node":  "8",
+    "cpus_per_task":  "8",
+    "distribution":  "block",
+    "gpus_on_node":  "1",
+    "gtids":  "0",
+    "job_account":  "iklimov",
+    "job_cpus_per_node":  "8",
+    "job_end_time":  "1740497860",
+    "job_gid":  "158931",
+    "job_gpus":  "0",
+    "job_id":  "36177202",
+    "job_name":  "beats_lstm_train",
+    "job_nodelist":  "hpc3-gpu-16-01",
+    "job_num_nodes":  "1",
+    "job_partition":  "free-gpu",
+    "job_qos":  "low",
+    "job_start_time":  "1740454660",
+    "job_uid":  "2382781",
+    "job_user":  "iklimov",
+    "jobid":  "36177202",
+    "launch_node_ipaddr":  "10.240.58.59",
+    "localid":  "0",
+    "mem_per_node":  "32768",
+    "nnodes":  "1",
+    "nodeid":  "0",
+    "nodelist":  "hpc3-gpu-16-01",
+    "nprocs":  "1",
+    "ntasks":  "1",
+    "prio_process":  "0",
+    "procid":  "0",
+    "script_context":  "prolog_task",
+    "srun_comm_host":  "10.240.58.59",
+    "srun_comm_port":  "34165",
+    "step_gpus":  "0",
+    "step_id":  "0",
+    "step_launcher_port":  "34165",
+    "step_nodelist":  "hpc3-gpu-16-01",
+    "step_num_nodes":  "1",
+    "step_num_tasks":  "1",
+    "step_tasks_per_node":  "1",
+    "stepid":  "0",
+    "submit_dir":  "/data/class/cs175/iklimov/PerfectTransitions/scripts",
+    "submit_host":  "login-i15",
+    "task_pid":  "867908",
+    "tasks_per_node":  "1",
+    "topology_addr":  "hpc3-gpu-16-01",
+    "topology_addr_pattern":  "node",
+    "tres_per_task":  "cpu=8",
+    "umask":  "0022"
+  },
+  "cudaVersion":  "12.2"
+}

@@ -30,7 +30,7 @@ echo "Starting song segmentation job on $HOSTNAME"
 # If you have checkpoint logic in feature_extraction.py, pass --resume if needed.
 
 python song_segmentation.py \
-    --input_dir ./../data/fma/zip/fma_full/fma_full/000 \
+    --input_dir ./../data/fma/zip/fma_full/fma_full/ \
     --output_dir ./../data/segments \
-    --segment_length 25 \
-    --overlap 5
+    --segment_length 10 \
+    --overlap 1

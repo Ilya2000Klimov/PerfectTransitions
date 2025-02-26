@@ -28,7 +28,7 @@ srun python scripts/train_lstm.py \
     --hidden_dim 128 \
     --lr 0.001 \
     --max_epochs 50 \
-    --patience 5 \
+    --patience 10 \
     --resume_if_checkpoint_exists True
 
 echo "Training job completed."
