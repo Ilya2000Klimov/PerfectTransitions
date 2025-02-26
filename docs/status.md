@@ -37,7 +37,7 @@ We use **BEATs-Large (Iteration 3, AS2M model)** to extract **per-frame embeddin
 - **L2-normalization** is applied before passing embeddings to the LSTM.
 - Data is stored in `.npy` format for fast retrieval.
 
-We used the open FMA database which contains 106,574 untrimmed tracks with 161 unbalanced genres of music. Due to overwhelming data size, We plan to first train the model on a portion of the data then increase the data size as we proceed further into development process.
+We used the open FMA database which contains 106,574 untrimmed tracks with 161 unbalanced genres of music. Due to overwhelming data size, We first trained the model on about 1% of the total data then increase the data size as we proceed further into development process.
 
 **Implementation Steps:**
 
@@ -150,25 +150,37 @@ implement, but can enrich your discussion in the final report. Finally, given yo
 so far, describe some of the challenges you anticipate facing by the time your final report is
 due, to what degree you expected to become obstacles, and what you might try in order to
 overcome them. -->
-This is only the base implementation of the project, it still left many things to be desired both in functional performance and usability. 
+Our model did run into a performance failure at the current state. After the model is trained, we measured its performance to discovered its training loss, validation loss, and test loss is always around 30%. It does not converge to 30% but rather the errors has stayed 30% during the entire training process. Which led us to suspect no meaningful training has been done.
 
-### Two-Stage Embedding (Separate Start & End)
+### Possible Causes
+#### **Anchor and Positive Overlap Too Much**
+- During our research phase, we discovered it was recommended to make the music segments have a small overlap during training which will make the training easier. However, our chosen overlap size might be too large, which will cause the embedding of music segments to be very similar if not identical, making it difficult for the model to learn any meaningful distinction during training.
+#### **Negative Sample Is Too Similar to Anchor**
+- During training, we split a segment into 2 halves, we use the first halves as the anchor to train the model to produce second halves. We feed the model two types of segment for second halves, positive segment which is the second halves of the original segment, and negative segment which are randomly chosen second halves to represent bad transition. However, the negative segment might not be "bad" enough for our model to meaningfully learn what is a bad transition. 
+#### **Empty or Tiny Arrays in Embeddings**
+- There occurs to be some embeddings that are too small or empty due to missing data or incorrect processing. Which led to the nearest neighbor distance calculation always results in 0, making the loss computation meaningless.
+#### **Small Dataset or Reusing an Old Checkpoint**
+- Due to the overwhelmingly large data set size, we decided to train our model using only 1% of the data so it can be processed and trained in a reasonable amount of time. However, it occurs that our data size is too small so the training started from an already saturated checkpoint, which led to the model be stuck in a local minimum of 30% loss.  
+
+### Future Improvements
+Other than fixing problems that are presented above, there are also some other improvements we can make on our basic model.
+#### Two-Stage Embedding (Separate Start & End)
 
 - Optimize **embedding separation** for better **sequence learning**.
 
-### Predicting Next Music Segment for Seamless Transitions
+#### Predicting Next Music Segment for Seamless Transitions
 
 - Introduce a **diffusion model** for transition refinement.
 
-### Optimizing Crossfade Durations to Find the Best Seamless Song Transition
+#### Optimizing Crossfade Durations to Find the Best Seamless Song Transition
 
 - Fine-tune the **best fade-in/fade-out durations** for **seamless audio blending**.
 
-### Interactive Interface
+#### Interactive Interface
 
 - Create a **demo UI** to **visualize transitions** and allow user feedback.
 
-### Music App Integration
+#### Music App Integration
 
 - Test deployment into **Spotify/YouTube DJ playlists** or **local audio mixing software**.
 
