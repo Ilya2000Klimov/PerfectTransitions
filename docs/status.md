@@ -2,11 +2,13 @@
 layout: default
 title: Status
 ---
+# [Presentation Video](https://youtu.be/bTIXJPJdLeY)
+
 ## Project Summary
 
 <!-- A short paragraph outlining the main idea of the project (see further
-instructions here: https://royf.org/crs/CS175/W25/proposal.pdf). You now have
-a better sense of what your project is about than you did in the proposal, so update and clarify
+instructions here: https://royf.org/crs/CS175/W2you did in the pr5/proposal.pdf). You now have
+a better sense of what your project is about than oposal, so update and clarify
 beyond that version. Do not change your proposal page! (A few of you have already changed
 it to reflect a change of topic, but don’t change it further, rather keep it as it was at the time
 you locked down your topic). -->
@@ -153,17 +155,22 @@ overcome them. -->
 Our model did run into a performance failure at the current state. After the model is trained, we measured its performance to discovered its training loss, validation loss, and test loss is always around 30%. It does not converge to 30% but rather the errors has stayed 30% during the entire training process. Which led us to suspect no meaningful training has been done.
 
 ### Possible Causes
+
 #### **Anchor and Positive Overlap Too Much**
 - During our research phase, we discovered it was recommended to make the music segments have a small overlap during training which will make the training easier. However, our chosen overlap size might be too large, which will cause the embedding of music segments to be very similar if not identical, making it difficult for the model to learn any meaningful distinction during training.
+
 #### **Negative Sample Is Too Similar to Anchor**
 - During training, we split a segment into 2 halves, we use the first halves as the anchor to train the model to produce second halves. We feed the model two types of segment for second halves, positive segment which is the second halves of the original segment, and negative segment which are randomly chosen second halves to represent bad transition. However, the negative segment might not be "bad" enough for our model to meaningfully learn what is a bad transition. 
+
 #### **Empty or Tiny Arrays in Embeddings**
 - There occurs to be some embeddings that are too small or empty due to missing data or incorrect processing. Which led to the nearest neighbor distance calculation always results in 0, making the loss computation meaningless.
+
 #### **Small Dataset or Reusing an Old Checkpoint**
 - Due to the overwhelmingly large data set size, we decided to train our model using only 1% of the data so it can be processed and trained in a reasonable amount of time. However, it occurs that our data size is too small so the training started from an already saturated checkpoint, which led to the model be stuck in a local minimum of 30% loss.  
 
 ### Future Improvements
 Other than fixing problems that are presented above, there are also some other improvements we can make on our basic model.
+
 #### Two-Stage Embedding (Separate Start & End)
 
 - Optimize **embedding separation** for better **sequence learning**.
