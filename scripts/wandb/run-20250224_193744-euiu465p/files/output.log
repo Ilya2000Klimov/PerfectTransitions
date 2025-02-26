@@ -1,0 +1,21 @@
+/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py:53: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler()  # Mixed precision
+/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py:78: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch [0/50] Train Loss: 0.2992 | Val Loss: 0.3000
+Traceback (most recent call last):
+  File "/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py", line 173, in <module>
+    main()
+  File "/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py", line 170, in main
+    train(base_config)
+  File "/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py", line 130, in train
+    wandb.save(checkpoint_file)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 401, in wrapper_fn
+    return func(self, *args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 391, in wrapper
+    return func(self, *args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 1975, in save
+    return self._save(
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 1990, in _save
+    raise ValueError("Glob may not walk above the base path")
+ValueError: Glob may not walk above the base path

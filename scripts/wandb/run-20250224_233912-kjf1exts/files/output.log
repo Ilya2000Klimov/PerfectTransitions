@@ -1,0 +1,15 @@
+[Resume] Resumed training from epoch 21
+Epoch [21/50] Train Loss: 0.3000 | Val Loss: 0.3000
+Checkpoint saved at epoch 21
+Epoch [22/50] Train Loss: 0.3000 | Val Loss: 0.3000
+Checkpoint saved at epoch 22
+Epoch [23/50] Train Loss: 0.3000 | Val Loss: 0.3000
+Checkpoint saved at epoch 23
+Epoch [24/50] Train Loss: 0.3000 | Val Loss: 0.3000
+Checkpoint saved at epoch 24
+Epoch [25/50] Train Loss: 0.3000 | Val Loss: 0.3000
+Checkpoint saved at epoch 25
+Epoch [26/50] Train Loss: 0.3000 | Val Loss: 0.3000
+Checkpoint saved at epoch 26
+Early stopping triggered at epoch 26
+Final Test Loss: 0.3000

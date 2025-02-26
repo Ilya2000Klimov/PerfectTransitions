@@ -1,0 +1,15 @@
+{"time":"2025-02-24T19:37:44.463644193-08:00","level":"INFO","msg":"stream: starting","core version":"0.19.7.dev1","symlink path":"/data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250224_193744-euiu465p/logs/debug-core.log"}
+{"time":"2025-02-24T19:37:44.573582101-08:00","level":"INFO","msg":"created new stream","id":"euiu465p"}
+{"time":"2025-02-24T19:37:44.573605716-08:00","level":"INFO","msg":"stream: started","id":"euiu465p"}
+{"time":"2025-02-24T19:37:44.57361668-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"euiu465p"}
+{"time":"2025-02-24T19:37:44.573627637-08:00","level":"INFO","msg":"sender: started","stream_id":"euiu465p"}
+{"time":"2025-02-24T19:37:44.573631339-08:00","level":"INFO","msg":"handler: started","stream_id":"euiu465p"}
+{"time":"2025-02-24T19:37:44.706968097-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-24T19:38:26.570417918-08:00","level":"INFO","msg":"stream: closing","id":"euiu465p"}
+{"time":"2025-02-24T19:38:26.570458534-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-24T19:38:26.570887287-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-24T19:38:26.974832122-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-24T19:38:27.078571696-08:00","level":"INFO","msg":"handler: closed","stream_id":"euiu465p"}
+{"time":"2025-02-24T19:38:27.078584064-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"euiu465p"}
+{"time":"2025-02-24T19:38:27.078590193-08:00","level":"INFO","msg":"sender: closed","stream_id":"euiu465p"}
+{"time":"2025-02-24T19:38:27.078759611-08:00","level":"INFO","msg":"stream: closed","id":"euiu465p"}

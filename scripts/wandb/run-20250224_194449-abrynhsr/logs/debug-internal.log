@@ -1,0 +1,15 @@
+{"time":"2025-02-24T19:44:49.535284418-08:00","level":"INFO","msg":"stream: starting","core version":"0.19.7.dev1","symlink path":"/data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250224_194449-abrynhsr/logs/debug-core.log"}
+{"time":"2025-02-24T19:44:49.645457292-08:00","level":"INFO","msg":"created new stream","id":"abrynhsr"}
+{"time":"2025-02-24T19:44:49.645481364-08:00","level":"INFO","msg":"stream: started","id":"abrynhsr"}
+{"time":"2025-02-24T19:44:49.64549258-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"abrynhsr"}
+{"time":"2025-02-24T19:44:49.64549784-08:00","level":"INFO","msg":"handler: started","stream_id":"abrynhsr"}
+{"time":"2025-02-24T19:44:49.645510423-08:00","level":"INFO","msg":"sender: started","stream_id":"abrynhsr"}
+{"time":"2025-02-24T19:44:49.945382853-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-24T19:45:32.219519121-08:00","level":"INFO","msg":"stream: closing","id":"abrynhsr"}
+{"time":"2025-02-24T19:45:32.219537013-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-24T19:45:32.219996891-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-24T19:45:32.649720827-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-24T19:45:32.77744039-08:00","level":"INFO","msg":"handler: closed","stream_id":"abrynhsr"}
+{"time":"2025-02-24T19:45:32.777452993-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"abrynhsr"}
+{"time":"2025-02-24T19:45:32.777465211-08:00","level":"INFO","msg":"sender: closed","stream_id":"abrynhsr"}
+{"time":"2025-02-24T19:45:32.777696077-08:00","level":"INFO","msg":"stream: closed","id":"abrynhsr"}

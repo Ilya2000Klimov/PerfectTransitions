@@ -1,0 +1,15 @@
+[Resume] Resumed training from epoch 9
+Epoch [9/50] Train Loss: 0.3000 | Val Loss: 0.3000
+Checkpoint saved at epoch 9
+Epoch [10/50] Train Loss: 0.3000 | Val Loss: 0.3000
+Checkpoint saved at epoch 10
+Epoch [11/50] Train Loss: 0.3000 | Val Loss: 0.3000
+Checkpoint saved at epoch 11
+Epoch [12/50] Train Loss: 0.3000 | Val Loss: 0.3000
+Checkpoint saved at epoch 12
+Epoch [13/50] Train Loss: 0.3000 | Val Loss: 0.3000
+Checkpoint saved at epoch 13
+Epoch [14/50] Train Loss: 0.3000 | Val Loss: 0.3000
+Checkpoint saved at epoch 14
+Early stopping triggered at epoch 14
+Final Test Loss: 0.3000
