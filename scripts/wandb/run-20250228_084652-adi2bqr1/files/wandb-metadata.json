@@ -1,0 +1,254 @@
+{
+    "os": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "python": "CPython 3.10.16",
+    "heartbeatAt": "2025-02-28T16:46:53.153160",
+    "startedAt": "2025-02-28T16:46:52.757489",
+    "docker": null,
+    "args": [
+        "service",
+        "--debug",
+        "--port-filename",
+        "/tmp/iklimov/36250631/tmpvz4fr0bz/port-1830807.txt",
+        "--pid",
+        "1830807"
+    ],
+    "state": "running",
+    "program": "/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py",
+    "codePathLocal": "train_lstm.py",
+    "codePath": "scripts/train_lstm.py",
+    "git": {
+        "remote": "git@github.com:Ilya2000Klimov/PerfectTransitions.git",
+        "commit": "19898a3fc207c44c3d12befae6cadbf6fb00198c"
+    },
+    "email": "ilya2000klimov@gmail.com",
+    "root": "/data/class/cs175/iklimov/PerfectTransitions",
+    "host": "hpc3-gpu-16-05",
+    "username": null,
+    "executable": "/data/class/cs175/iklimov/.conda/envs/PT/bin/python",
+    "cpu_count": 40,
+    "cpu_count_logical": 40,
+    "cpu_freq": {
+        "current": 2699.3860749999994,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2863.018,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2830.194,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2862.037,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2838.026,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2838.438,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2830.895,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2838.258,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2856.454,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2828.739,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2861.416,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2844.78,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2856.667,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2859.526,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2832.82,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2838.279,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2827.397,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2859.651,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2826.561,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3100.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3099.999,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3099.999,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3046.35,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.609,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3100.003,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 228809453568,
+            "used": 148393385984
+        }
+    },
+    "gpu": "Tesla V100-FHHL-16GB",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Tesla V100-FHHL-16GB",
+            "memory_total": 17179869184
+        }
+    ],
+    "memory": {
+        "total": 201930706944
+    }
+}

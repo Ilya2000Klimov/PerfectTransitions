@@ -1,0 +1,16 @@
+{"time":"2025-02-25T17:35:43.444329986-08:00","level":"INFO","msg":"stream: starting","core version":"0.19.7.dev1","symlink path":"/data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/wandb/run-20250225_173543-crtmdgx2/logs/debug-core.log"}
+{"time":"2025-02-25T17:35:43.552267407-08:00","level":"INFO","msg":"created new stream","id":"crtmdgx2"}
+{"time":"2025-02-25T17:35:43.552288826-08:00","level":"INFO","msg":"stream: started","id":"crtmdgx2"}
+{"time":"2025-02-25T17:35:43.552300771-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"crtmdgx2"}
+{"time":"2025-02-25T17:35:43.552304849-08:00","level":"INFO","msg":"sender: started","stream_id":"crtmdgx2"}
+{"time":"2025-02-25T17:35:43.552317727-08:00","level":"INFO","msg":"handler: started","stream_id":"crtmdgx2"}
+{"time":"2025-02-25T17:35:45.051271875-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-25T17:35:45.206501352-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-25T17:35:45.206869118-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-25T17:35:46.170731668-08:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.121198369},{"desc":"uploading wandb-summary.json","runtime_seconds":0.121191605,"progress":"24B/24B"},{"desc":"uploading config.yaml","runtime_seconds":0.002587844,"progress":"437B/437B"}],"total_operations":3}}
+{"time":"2025-02-25T17:35:46.366132605-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-25T17:35:47.474388017-08:00","level":"INFO","msg":"stream: closing","id":"crtmdgx2"}
+{"time":"2025-02-25T17:35:47.47440726-08:00","level":"INFO","msg":"handler: closed","stream_id":"crtmdgx2"}
+{"time":"2025-02-25T17:35:47.474419912-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"crtmdgx2"}
+{"time":"2025-02-25T17:35:47.474426793-08:00","level":"INFO","msg":"sender: closed","stream_id":"crtmdgx2"}
+{"time":"2025-02-25T17:35:47.474560522-08:00","level":"INFO","msg":"stream: closed","id":"crtmdgx2"}

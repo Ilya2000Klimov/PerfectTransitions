@@ -1,0 +1,17 @@
+/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn(
+Traceback (most recent call last):
+  File "/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py", line 216, in <module>
+    main()
+  File "/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py", line 213, in main
+    train(base_config)
+  File "/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py", line 160, in train
+    torch.save({
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/torch/serialization.py", line 943, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/torch/serialization.py", line 810, in _open_zipfile_writer
+    return container(name_or_buffer)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/torch/serialization.py", line 781, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(self.name, _compute_crc32))
+RuntimeError: Parent directory /./../model_checkpoints does not exist.
+Epoch [0/50] Train Loss: 0.1986 | Val Loss: 0.2000

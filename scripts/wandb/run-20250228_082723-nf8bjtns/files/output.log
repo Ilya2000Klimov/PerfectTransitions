@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py", line 216, in <module>
+    main()
+  File "/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py", line 213, in main
+    train(base_config)
+  File "/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py", line 78, in train
+    dropout=0.2 if num_layers > 1 else 0.0,  # Fix warning
+NameError: name 'num_layers' is not defined

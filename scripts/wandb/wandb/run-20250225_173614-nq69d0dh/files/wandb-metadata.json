@@ -1,0 +1,31 @@
+{
+  "os":  "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "python":  "CPython 3.10.16",
+  "startedAt":  "2025-02-26T01:36:14.157321Z",
+  "program":  "/data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/restore_wandb_runs.py",
+  "codePath":  "scripts/wandb/restore_wandb_runs.py",
+  "git":  {
+    "remote":  "git@github.com:Ilya2000Klimov/PerfectTransitions.git",
+    "commit":  "7dbbe0804f8718018941faa07626cd0bd64af4c0"
+  },
+  "email":  "ilya2000klimov@gmail.com",
+  "root":  "/data/class/cs175/iklimov/PerfectTransitions/scripts/wandb",
+  "host":  "login-i15",
+  "executable":  "/data/class/cs175/iklimov/.conda/envs/PT/bin/python",
+  "codePathLocal":  "restore_wandb_runs.py",
+  "cpu_count":  40,
+  "cpu_count_logical":  40,
+  "disk":  {
+    "/":  {
+      "total":  "465009295360",
+      "used":  "145075433472"
+    }
+  },
+  "memory":  {
+    "total":  "200820760576"
+  },
+  "cpu":  {
+    "count":  40,
+    "countLogical":  40
+  }
+}

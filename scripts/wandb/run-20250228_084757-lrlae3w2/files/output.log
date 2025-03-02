@@ -1,0 +1,11 @@
+Epoch [0/50] Train Loss: 0.2000 | Val Loss: 0.2000
+[Checkpoint] Saved at epoch 0
+Epoch [1/50] Train Loss: 0.2000 | Val Loss: 0.2000
+Epoch [2/50] Train Loss: 0.2000 | Val Loss: 0.2000
+Epoch [3/50] Train Loss: 0.2000 | Val Loss: 0.2000
+Epoch [4/50] Train Loss: 0.2000 | Val Loss: 0.2000
+[Checkpoint] Saved at epoch 4
+Epoch [5/50] Train Loss: 0.2000 | Val Loss: 0.2000
+Epoch [6/50] Train Loss: 0.2000 | Val Loss: 0.2000
+[Checkpoint] Saved at epoch 6
+Epoch [7/50] Train Loss: 0.2000 | Val Loss: 0.2000

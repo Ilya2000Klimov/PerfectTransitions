@@ -1,0 +1,16 @@
+Epoch [0/50] Train Loss: 0.3988 | Val Loss: 0.3999
+[Checkpoint] Saved at epoch 0
+Epoch [1/50] Train Loss: 0.4000 | Val Loss: 0.4000
+Epoch [2/50] Train Loss: 0.4000 | Val Loss: 0.4000
+Epoch [3/50] Train Loss: 0.4000 | Val Loss: 0.4000
+Epoch [4/50] Train Loss: 0.4000 | Val Loss: 0.4000
+[Checkpoint] Saved at epoch 4
+Epoch [5/50] Train Loss: 0.4000 | Val Loss: 0.4000
+Epoch [6/50] Train Loss: 0.4000 | Val Loss: 0.4000
+Epoch [7/50] Train Loss: 0.4000 | Val Loss: 0.4000
+Epoch [8/50] Train Loss: 0.4000 | Val Loss: 0.4000
+Epoch [9/50] Train Loss: 0.4000 | Val Loss: 0.4000
+[Checkpoint] Saved at epoch 9
+Epoch [10/50] Train Loss: 0.4000 | Val Loss: 0.4000
+[Early Stopping] Triggered at epoch 10
+[Test] Final Test Loss: 0.4000

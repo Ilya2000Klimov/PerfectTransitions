@@ -7,148 +7,130 @@ from torch.utils.data import Dataset
 
 class TransitionsDataset(Dataset):
     """
-    - Scans a directory of .npy embeddings (one file per segment).
-    - Splits them into train/val/test by song ID or index.
-    - For each index i, we define:
-        anchor   = last overlap_frames of clip i
-        positive = first overlap_frames of clip (i+1) (same song)
-        negative = first overlap_frames of a random clip from a different song
-    - "Two-stage embeddings" => we specifically target the boundary frames
-      (e.g. last 80 for anchor, first 80 for positive).
+    A dataset that reads .npy embeddings from subfolders:
+      embeddings_dir/train/*.npy
+      embeddings_dir/val/*.npy
+      embeddings_dir/test/*.npy
+    or from a single folder if you'd prefer.
+
+    Instead of splitting at runtime, we assume you either:
+      1) pre-split the data into subfolders (train, val, test), or
+      2) keep them in one folder and specify 'split' if you do custom logic.
+
+    This version ensures a negative always exists (provided multiple songs exist).
     """
 
     def __init__(self, embeddings_dir, split="train",
-                 overlap_frames=500, train_ratio=0.8, val_ratio=0.1):
+                 overlap_frames=500):
         """
-        overlap_frames: how many frames we take from the end or start of each clip
-        train_ratio, val_ratio: how we split the dataset
+        overlap_frames: how many frames from end-of-anchor or start-of-positive/negative
         """
         super().__init__()
-        self.embeddings_dir = embeddings_dir
         self.overlap_frames = overlap_frames
 
-        # 1) Gather all .npy files
-        all_files = sorted(glob.glob(os.path.join(embeddings_dir, "*.npy")))
+        # 1) Because we do pre-splitting, we look in e.g. embeddings_dir/train
+        data_dir = os.path.join(embeddings_dir, split)
+        if not os.path.isdir(data_dir):
+            raise ValueError(f"[Error] Directory {data_dir} does not exist. Check your presplit or path.")
 
-        # 2) Optionally parse "song ID" from filename if needed
-        #    We assume file naming like: 000145_seg010.npy
-        #    Song ID might be "000145", seg index might be "seg010"
-        #    We'll store (filepath, song_id, seg_id)
+        all_files = sorted(glob.glob(os.path.join(data_dir, "*.npy")))
+        if not all_files:
+            raise ValueError(f"[Error] No .npy files found in {data_dir}")
+
+        # 2) Parse (song_id, seg#)
         self.segments = []
         for fpath in all_files:
             fname = os.path.basename(fpath)
-            # Example: "000145_seg010.npy"
-            # We'll parse up to first underscore => "000145", after => "seg010"
-            # Adjust as needed for your naming scheme
             if "_" in fname:
-                song_id, seg_id = fname.split("_", 1)
-                seg_id = seg_id.replace(".npy", "")
+                song_id, seg_part = fname.split("_", 1)
+                seg_part = seg_part.replace(".npy", "")
             else:
-                # fallback: entire fname as song_id
                 song_id = fname.replace(".npy", "")
-                seg_id = "seg0"
+                seg_part = "seg0"
 
-            self.segments.append((fpath, song_id, seg_id))
-
-        # 3) Sort by (song_id, seg_id) so consecutive segments are next to each other
-        #    This helps define anchor -> positive pairs
-        def seg_sort_key(x):
-            # (filepath, "000145", "seg010")
-            # parse the numeric part in "seg010"
-            fpath, s_id, seg_str = x
-            # strip "seg"
             seg_num = 0
-            if seg_str.startswith("seg"):
+            if seg_part.startswith("seg"):
                 try:
-                    seg_num = int(seg_str[3:])
+                    seg_num = int(seg_part[3:])
                 except:
                     seg_num = 0
-            return (s_id, seg_num)
-        self.segments.sort(key=seg_sort_key)
 
-        # 4) Split into train/val/test by index
-        N = len(self.segments)
-        train_end = int(N * train_ratio)
-        val_end   = int(N * (train_ratio + val_ratio))
+            self.segments.append((fpath, song_id, seg_num))
 
-        if split == "train":
-            self.segments = self.segments[:train_end]
-        elif split == "val":
-            self.segments = self.segments[train_end:val_end]
-        elif split == "test":
-            self.segments = self.segments[val_end:]
-        else:
-            raise ValueError(f"Unknown split={split}")
+        # 3) Sort by (song_id, seg_num) => anchor->positive
+        self.segments.sort(key=lambda x: (x[1], x[2]))
 
-        # 5) Build anchor-positive pairs:
-        #    We'll store a list of (anchor_idx, positive_idx) whenever
-        #    segments belong to the same song & are consecutive in seg_id.
+        # 4) Build anchor-positive pairs
         self.pairs = []
         for i in range(len(self.segments) - 1):
             fpath_i, song_i, seg_i = self.segments[i]
             fpath_j, song_j, seg_j = self.segments[i+1]
             if song_i == song_j:
-                # consecutive segments in the same song => valid anchor-positive
                 self.pairs.append((i, i+1))
 
-        # We'll gather all song IDs for negative sampling
-        # or we can sample from all segments randomly
+        print(f"[{split}] Found {len(self.segments)} segments, built {len(self.pairs)} anchor-positive pairs.")
+
+        # 5) For negative sampling, we need at least 2 distinct songs
         self.all_indices = list(range(len(self.segments)))
+        self.song_to_indices = {}
+        for idx, (fp, s_id, s_num) in enumerate(self.segments):
+            if s_id not in self.song_to_indices:
+                self.song_to_indices[s_id] = []
+            self.song_to_indices[s_id].append(idx)
+
+        # If there's only one unique song, we can't do negative from a different song
+        if len(self.song_to_indices) < 2:
+            print("[Warning] Only one song found! Negative sampling is impossible.")
+            print("=> We'll skip building pairs altogether to avoid errors.")
+            self.pairs = []
 
     def __len__(self):
         return len(self.pairs)
 
     @property
     def input_dim(self):
-        """
-        The dimension of each frame, e.g. 768 for BEATs Large.
-        We'll load one file to figure out shape.
-        """
+        if len(self.segments) == 0:
+            return 0  # no data
         fpath, _, _ = self.segments[0]
         arr = np.load(fpath)
-        return arr.shape[1]  # (T, D) => D
+        return arr.shape[1]
 
     def __getitem__(self, idx):
-        """
-        Returns (anchor, positive, negative) each shaped [T', D].
-        anchor = last overlap_frames from clip i
-        positive = first overlap_frames from clip (i+1)
-        negative = first overlap_frames from a random *different* clip
-        """
         anchor_idx, positive_idx = self.pairs[idx]
 
-        # Load anchor clip
-        fpath_i, _, _ = self.segments[anchor_idx]
-        arr_i = np.load(fpath_i)  # shape (T, D)
+        # Load anchor
+        fpath_i, song_i, _ = self.segments[anchor_idx]
+        arr_i = np.load(fpath_i)  # (T, D)
         T_i = arr_i.shape[0]
-        # We'll take the last overlap_frames
         start_i = max(0, T_i - self.overlap_frames)
-        anchor = arr_i[start_i:, :]  # (overlap_frames, D) or smaller if T_i < overlap_frames
+        anchor = arr_i[start_i:, :]
 
-        # Load positive clip
+        # Load positive
         fpath_j, _, _ = self.segments[positive_idx]
-        arr_j = np.load(fpath_j)  # shape (T, D)
+        arr_j = np.load(fpath_j)
         T_j = arr_j.shape[0]
-        # We'll take the first overlap_frames
         end_j = min(T_j, self.overlap_frames)
-        positive = arr_j[:end_j, :]  # (overlap_frames, D)
+        positive = arr_j[:end_j, :]
 
-        # Negative: choose random index from a different song
-        while True:
-            neg_idx = random.choice(self.all_indices)
-            if neg_idx not in [anchor_idx, positive_idx]:
-                # Optionally also ensure it's a different song if you want
-                # We skip if same song
-                if self.segments[neg_idx][1] != self.segments[anchor_idx][1]:
-                    break
+        # Negative from different song
+        # We'll gather all songs except anchor's. Then pick one at random.
+        valid_songs = [sid for sid in self.song_to_indices.keys() if sid != song_i]
+        # Edge case: if there's no other song => fallback
+        if not valid_songs:
+            # Return anchor=positive=negative => leads to high loss or skip
+            negative = np.zeros_like(anchor)
+            # or skip
+            # raise ValueError("No other songs for negative sampling!")
+        else:
+            neg_song = random.choice(valid_songs)
+            neg_idx = random.choice(self.song_to_indices[neg_song])
+            fpath_neg, _, _ = self.segments[neg_idx]
+            arr_neg = np.load(fpath_neg)
+            T_n = arr_neg.shape[0]
+            end_n = min(T_n, self.overlap_frames)
+            negative = arr_neg[:end_n, :]
 
-        fpath_neg, _, _ = self.segments[neg_idx]
-        arr_neg = np.load(fpath_neg)
-        T_n = arr_neg.shape[0]
-        end_n = min(T_n, self.overlap_frames)
-        negative = arr_neg[:end_n, :]
-
-        # Convert to torch tensors
+        # Convert to torch
         anchor   = torch.from_numpy(anchor).float()
         positive = torch.from_numpy(positive).float()
         negative = torch.from_numpy(negative).float()

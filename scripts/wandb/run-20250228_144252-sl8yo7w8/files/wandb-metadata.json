@@ -1,0 +1,214 @@
+{
+    "os": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "python": "CPython 3.10.16",
+    "heartbeatAt": "2025-02-28T22:42:52.622752",
+    "startedAt": "2025-02-28T22:42:52.288311",
+    "docker": null,
+    "args": [
+        "service",
+        "--debug",
+        "--port-filename",
+        "/tmp/iklimov/36253238/tmptip7sp4a/port-2315873.txt",
+        "--pid",
+        "2315873"
+    ],
+    "state": "running",
+    "program": "/data/class/cs175/iklimov/PerfectTransitions/scripts/train_lstm.py",
+    "codePathLocal": "train_lstm.py",
+    "codePath": "scripts/train_lstm.py",
+    "git": {
+        "remote": "git@github.com:Ilya2000Klimov/PerfectTransitions.git",
+        "commit": "19898a3fc207c44c3d12befae6cadbf6fb00198c"
+    },
+    "email": "ilya2000klimov@gmail.com",
+    "root": "/data/class/cs175/iklimov/PerfectTransitions",
+    "host": "hpc3-gpu-l54-07",
+    "username": null,
+    "executable": "/data/class/cs175/iklimov/.conda/envs/PT/bin/python",
+    "cpu_count": 32,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 3481.25,
+        "min": 3500.0,
+        "max": 3500.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3300.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3300.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3300.0,
+            "min": 3500.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3500.0,
+            "min": 3500.0,
+            "max": 3500.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 462960574464,
+            "used": 148384227328
+        }
+    },
+    "gpu": "NVIDIA A30",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA A30",
+            "memory_total": 25769803776
+        }
+    ],
+    "memory": {
+        "total": 269350060032
+    }
+}

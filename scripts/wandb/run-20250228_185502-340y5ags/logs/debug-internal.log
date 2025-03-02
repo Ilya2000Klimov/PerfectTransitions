@@ -1,0 +1,22 @@
+2025-02-28 18:55:02,644 INFO    StreamThr :1517421 [internal.py:wandb_internal():83] W&B internal server running at pid: 1517421, started at: 2025-02-28 18:55:02.643696
+2025-02-28 18:55:02,646 INFO    WriterThread:1517421 [datastore.py:open_for_write():87] open: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_185502-340y5ags/run-340y5ags.wandb
+2025-02-28 18:55:02,869 INFO    SenderThread:1517421 [dir_watcher.py:__init__():211] watching files in: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_185502-340y5ags/files
+2025-02-28 18:55:02,869 INFO    SenderThread:1517421 [sender.py:_start_run_threads():1133] run started: 340y5ags with start time 1740797702.642625
+2025-02-28 18:55:02,870 INFO    HandlerThread:1517421 [system_monitor.py:start():187] Starting system monitor
+2025-02-28 18:55:02,870 INFO    SystemMonitor:1517421 [system_monitor.py:_start():151] Starting system asset monitoring threads
+2025-02-28 18:55:02,870 INFO    HandlerThread:1517421 [system_monitor.py:probe():207] Collecting system info
+2025-02-28 18:55:02,870 INFO    SystemMonitor:1517421 [interfaces.py:start():186] Started cpu monitoring
+2025-02-28 18:55:02,871 INFO    SystemMonitor:1517421 [interfaces.py:start():186] Started disk monitoring
+2025-02-28 18:55:02,871 INFO    SystemMonitor:1517421 [interfaces.py:start():186] Started gpu monitoring
+2025-02-28 18:55:02,872 INFO    SystemMonitor:1517421 [interfaces.py:start():186] Started memory monitoring
+2025-02-28 18:55:02,873 INFO    SystemMonitor:1517421 [interfaces.py:start():186] Started network monitoring
+2025-02-28 18:55:02,914 INFO    HandlerThread:1517421 [system_monitor.py:probe():217] Finished collecting system info
+2025-02-28 18:55:02,914 INFO    HandlerThread:1517421 [system_monitor.py:probe():220] Publishing system info
+2025-02-28 18:55:03,870 INFO    Thread-12 :1517421 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_185502-340y5ags/files/conda-environment.yaml
+2025-02-28 18:55:11,463 INFO    HandlerThread:1517421 [system_monitor.py:probe():222] Finished publishing system info
+2025-02-28 18:55:11,530 INFO    SenderThread:1517421 [sender.py:_save_file():1402] saving file wandb-metadata.json with policy now
+2025-02-28 18:55:11,872 INFO    Thread-12 :1517421 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_185502-340y5ags/files/conda-environment.yaml
+2025-02-28 18:55:11,872 INFO    Thread-12 :1517421 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_185502-340y5ags/files/wandb-metadata.json
+2025-02-28 18:55:11,886 INFO    wandb-upload_0:1517421 [upload_job.py:push():130] Uploaded file /tmp/iklimov/36249412/tmp5gnnvjwywandb/ucnh9khe-wandb-metadata.json
+2025-02-28 18:55:12,872 INFO    Thread-12 :1517421 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_185502-340y5ags/files/requirements.txt
+2025-02-28 18:55:35,881 INFO    Thread-12 :1517421 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_185502-340y5ags/files/config.yaml

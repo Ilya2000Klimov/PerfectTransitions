@@ -1,0 +1,78 @@
+2025-02-28 08:47:50,102 INFO    StreamThr :1734849 [internal.py:wandb_internal():83] W&B internal server running at pid: 1734849, started at: 2025-02-28 08:47:50.101161
+2025-02-28 08:47:50,104 INFO    WriterThread:1734849 [datastore.py:open_for_write():87] open: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/run-bcb8qm4z.wandb
+2025-02-28 08:47:50,308 INFO    SenderThread:1734849 [dir_watcher.py:__init__():211] watching files in: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files
+2025-02-28 08:47:50,308 INFO    SenderThread:1734849 [sender.py:_start_run_threads():1133] run started: bcb8qm4z with start time 1740761270.100086
+2025-02-28 08:47:50,326 INFO    HandlerThread:1734849 [system_monitor.py:start():187] Starting system monitor
+2025-02-28 08:47:50,326 INFO    SystemMonitor:1734849 [system_monitor.py:_start():151] Starting system asset monitoring threads
+2025-02-28 08:47:50,326 INFO    HandlerThread:1734849 [system_monitor.py:probe():207] Collecting system info
+2025-02-28 08:47:50,327 INFO    SystemMonitor:1734849 [interfaces.py:start():186] Started cpu monitoring
+2025-02-28 08:47:50,328 INFO    SystemMonitor:1734849 [interfaces.py:start():186] Started disk monitoring
+2025-02-28 08:47:50,329 INFO    SystemMonitor:1734849 [interfaces.py:start():186] Started gpu monitoring
+2025-02-28 08:47:50,329 INFO    SystemMonitor:1734849 [interfaces.py:start():186] Started memory monitoring
+2025-02-28 08:47:50,330 INFO    SystemMonitor:1734849 [interfaces.py:start():186] Started network monitoring
+2025-02-28 08:47:50,345 INFO    HandlerThread:1734849 [system_monitor.py:probe():217] Finished collecting system info
+2025-02-28 08:47:50,345 INFO    HandlerThread:1734849 [system_monitor.py:probe():220] Publishing system info
+2025-02-28 08:47:51,309 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/conda-environment.yaml
+2025-02-28 08:47:54,066 INFO    HandlerThread:1734849 [system_monitor.py:probe():222] Finished publishing system info
+2025-02-28 08:47:54,068 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file wandb-metadata.json with policy now
+2025-02-28 08:47:54,309 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/conda-environment.yaml
+2025-02-28 08:47:54,309 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/requirements.txt
+2025-02-28 08:47:54,309 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/wandb-metadata.json
+2025-02-28 08:47:54,403 INFO    wandb-upload_0:1734849 [upload_job.py:push():130] Uploaded file /tmp/iklimov/36250672/tmp0ikquarnwandb/z8wsx8s1-wandb-metadata.json
+2025-02-28 08:48:23,321 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/config.yaml
+2025-02-28 10:02:56,480 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-02-28 10:02:56,604 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/wandb-summary.json
+2025-02-28 10:02:56,604 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/output.log
+2025-02-28 10:02:56,630 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file lstm_checkpoint.pt with policy live
+2025-02-28 10:02:57,605 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 10:02:57,630 INFO    wandb-upload_0:1734849 [upload_job.py:push():130] Uploaded file /tmp/iklimov/36250672/tmp0ikquarnwandb/h193cq4h-lstm_checkpoint.pt
+2025-02-28 10:02:58,605 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/output.log
+2025-02-28 10:03:25,649 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/config.yaml
+2025-02-28 10:18:31,210 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 11:09:06,063 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 11:17:52,431 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-02-28 11:17:53,299 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/wandb-summary.json
+2025-02-28 11:17:54,299 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/output.log
+2025-02-28 11:57:40,342 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 12:32:45,230 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-02-28 12:32:45,782 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/wandb-summary.json
+2025-02-28 12:32:46,783 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/output.log
+2025-02-28 13:37:16,493 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 13:47:48,715 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-02-28 13:47:48,775 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file lstm_checkpoint.pt with policy live
+2025-02-28 13:47:48,794 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 13:47:48,795 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/wandb-summary.json
+2025-02-28 13:47:49,508 INFO    wandb-upload_0:1734849 [upload_job.py:push():130] Uploaded file /tmp/iklimov/36250672/tmp0ikquarnwandb/m8vj10dq-lstm_checkpoint.pt
+2025-02-28 13:47:49,795 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/output.log
+2025-02-28 14:12:49,827 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 14:55:24,498 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 15:03:36,108 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-02-28 15:03:36,173 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file lstm_checkpoint.pt with policy live
+2025-02-28 15:03:36,774 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 15:03:36,774 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/wandb-summary.json
+2025-02-28 15:03:36,890 INFO    wandb-upload_0:1734849 [upload_job.py:push():130] Uploaded file /tmp/iklimov/36250672/tmp0ikquarnwandb/103f4qf7-lstm_checkpoint.pt
+2025-02-28 15:03:38,774 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/output.log
+2025-02-28 15:17:37,356 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 15:54:11,397 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 16:08:44,775 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 16:19:32,142 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-02-28 16:19:33,056 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/wandb-summary.json
+2025-02-28 16:19:34,057 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/output.log
+2025-02-28 17:03:19,719 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 17:26:53,530 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 17:36:35,524 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-02-28 17:36:35,830 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/wandb-summary.json
+2025-02-28 17:36:36,835 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/output.log
+2025-02-28 18:11:28,361 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 18:52:47,894 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-02-28 18:52:47,951 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/wandb-summary.json
+2025-02-28 18:52:49,952 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/output.log
+2025-02-28 19:19:03,707 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 19:34:37,252 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 20:09:05,204 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-02-28 20:09:05,266 INFO    SenderThread:1734849 [sender.py:_save_file():1402] saving file lstm_checkpoint.pt with policy live
+2025-02-28 20:09:05,542 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt
+2025-02-28 20:09:05,542 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/wandb-summary.json
+2025-02-28 20:09:06,112 INFO    wandb-upload_0:1734849 [upload_job.py:push():130] Uploaded file /tmp/iklimov/36250672/tmp0ikquarnwandb/cby896dc-lstm_checkpoint.pt
+2025-02-28 20:09:06,543 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/output.log
+2025-02-28 20:27:06,307 INFO    Thread-12 :1734849 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_084750-bcb8qm4z/files/lstm_checkpoint.pt

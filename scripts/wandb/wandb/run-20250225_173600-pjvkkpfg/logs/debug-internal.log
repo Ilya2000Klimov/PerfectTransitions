@@ -1,0 +1,16 @@
+{"time":"2025-02-25T17:36:00.094375183-08:00","level":"INFO","msg":"stream: starting","core version":"0.19.7.dev1","symlink path":"/data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/wandb/run-20250225_173600-pjvkkpfg/logs/debug-core.log"}
+{"time":"2025-02-25T17:36:00.203630305-08:00","level":"INFO","msg":"created new stream","id":"pjvkkpfg"}
+{"time":"2025-02-25T17:36:00.203658913-08:00","level":"INFO","msg":"stream: started","id":"pjvkkpfg"}
+{"time":"2025-02-25T17:36:00.203672509-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"pjvkkpfg"}
+{"time":"2025-02-25T17:36:00.203688668-08:00","level":"INFO","msg":"sender: started","stream_id":"pjvkkpfg"}
+{"time":"2025-02-25T17:36:00.20367778-08:00","level":"INFO","msg":"handler: started","stream_id":"pjvkkpfg"}
+{"time":"2025-02-25T17:36:01.050528058-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-25T17:36:01.206516268-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-25T17:36:01.2069915-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-25T17:36:02.169136104-08:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading data","runtime_seconds":0.776437757},{"desc":"updating run config","runtime_seconds":0.119110233},{"desc":"uploading output.log","runtime_seconds":0.057830304},{"desc":"uploading wandb-summary.json","runtime_seconds":0.007270685,"progress":"24B/24B"}],"total_operations":4}}
+{"time":"2025-02-25T17:36:02.706647605-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-25T17:36:04.139959728-08:00","level":"INFO","msg":"stream: closing","id":"pjvkkpfg"}
+{"time":"2025-02-25T17:36:04.139979958-08:00","level":"INFO","msg":"handler: closed","stream_id":"pjvkkpfg"}
+{"time":"2025-02-25T17:36:04.139991873-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"pjvkkpfg"}
+{"time":"2025-02-25T17:36:04.140000366-08:00","level":"INFO","msg":"sender: closed","stream_id":"pjvkkpfg"}
+{"time":"2025-02-25T17:36:04.140197299-08:00","level":"INFO","msg":"stream: closed","id":"pjvkkpfg"}

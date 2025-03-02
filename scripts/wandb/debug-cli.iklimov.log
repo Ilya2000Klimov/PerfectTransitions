@@ -1,0 +1,595 @@
+2025-02-27 23:47:39 ERROR Traceback (most recent call last):
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 1139, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep search-byol/BEATs-LSTM-Transitions/xyz123 not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/cli/cli.py", line 1676, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/wandb_agent.py", line 567, in agent
+    return run_agent(
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/wandb_agent.py", line 526, in run_agent
+    agent.run()
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/wandb_agent.py", line 193, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/internal.py", line 134, in sweep
+    return self.api.sweep(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/normalize.py", line 79, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 1139, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.errors.CommError: Sweep search-byol/BEATs-LSTM-Transitions/xyz123 not found
+
+2025-02-27 23:52:36 INFO Running runs: []
+2025-02-27 23:52:37 INFO Agent received command: run
+2025-02-27 23:52:37 INFO Agent starting run with config:
+	batch_size: 16
+	checkpoint_dir: /./../model_checkpoints
+	embeddings_dir: ./../data/embeddings
+	frames: 691
+	hidden_dim: 128
+	lr: 0.0002048538413116368
+	lstm_layers: 3
+	margin: 0.3
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-27 23:52:37 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=16 --checkpoint_dir=/./../model_checkpoints --embeddings_dir=./../data/embeddings --frames=691 --hidden_dim=128 --lr=0.0002048538413116368 --lstm_layers=3 --margin=0.3 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-27 23:52:42 INFO Running runs: ['3p1zx9u8']
+2025-02-27 23:52:42 INFO Cleaning up finished run: 3p1zx9u8
+2025-02-27 23:52:42 INFO Agent received command: run
+2025-02-27 23:52:42 INFO Agent starting run with config:
+	batch_size: 32
+	checkpoint_dir: /./../model_checkpoints
+	embeddings_dir: ./../data/embeddings
+	frames: 486
+	hidden_dim: 128
+	lr: 0.00017927016443032998
+	lstm_layers: 2
+	margin: 0.4
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-27 23:52:42 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=32 --checkpoint_dir=/./../model_checkpoints --embeddings_dir=./../data/embeddings --frames=486 --hidden_dim=128 --lr=0.00017927016443032998 --lstm_layers=2 --margin=0.4 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-27 23:52:47 INFO Running runs: ['a7rzj95d']
+2025-02-27 23:52:47 INFO Cleaning up finished run: a7rzj95d
+2025-02-27 23:52:48 INFO Agent received command: run
+2025-02-27 23:52:48 INFO Agent starting run with config:
+	batch_size: 16
+	checkpoint_dir: /./../model_checkpoints
+	embeddings_dir: ./../data/embeddings
+	frames: 808
+	hidden_dim: 64
+	lr: 0.0009470550156846924
+	lstm_layers: 1
+	margin: 0.4
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-27 23:52:48 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=16 --checkpoint_dir=/./../model_checkpoints --embeddings_dir=./../data/embeddings --frames=808 --hidden_dim=64 --lr=0.0009470550156846924 --lstm_layers=1 --margin=0.4 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-27 23:52:53 INFO Running runs: ['bey0uflr']
+2025-02-27 23:52:53 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-02-27 23:52:53 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-02-28 00:06:33 INFO Running runs: []
+2025-02-28 00:06:33 INFO Agent received command: run
+2025-02-28 00:06:33 INFO Agent starting run with config:
+	batch_size: 64
+	checkpoint_dir: /./../model_checkpoints
+	embeddings_dir: ./../data/embeddings
+	frames: 839
+	hidden_dim: 64
+	lr: 0.00014222393689557802
+	lstm_layers: 1
+	margin: 0.2
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 00:06:33 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=64 --checkpoint_dir=/./../model_checkpoints --embeddings_dir=./../data/embeddings --frames=839 --hidden_dim=64 --lr=0.00014222393689557802 --lstm_layers=1 --margin=0.2 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 00:06:38 INFO Running runs: ['d5xstie1']
+2025-02-28 01:25:20 INFO Cleaning up finished run: d5xstie1
+2025-02-28 01:25:20 INFO Agent received command: run
+2025-02-28 01:25:20 INFO Agent starting run with config:
+	batch_size: 16
+	checkpoint_dir: /./../model_checkpoints
+	embeddings_dir: ./../data/embeddings
+	frames: 691
+	hidden_dim: 128
+	lr: 0.0002048538413116368
+	lstm_layers: 3
+	margin: 0.3
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 01:25:20 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=16 --checkpoint_dir=/./../model_checkpoints --embeddings_dir=./../data/embeddings --frames=691 --hidden_dim=128 --lr=0.0002048538413116368 --lstm_layers=3 --margin=0.3 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 01:25:25 INFO Running runs: ['3p1zx9u8']
+2025-02-28 03:06:48 INFO Cleaning up finished run: 3p1zx9u8
+2025-02-28 03:06:48 INFO Agent received command: run
+2025-02-28 03:06:48 INFO Agent starting run with config:
+	batch_size: 32
+	checkpoint_dir: /./../model_checkpoints
+	embeddings_dir: ./../data/embeddings
+	frames: 486
+	hidden_dim: 128
+	lr: 0.00017927016443032998
+	lstm_layers: 2
+	margin: 0.4
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 03:06:48 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=32 --checkpoint_dir=/./../model_checkpoints --embeddings_dir=./../data/embeddings --frames=486 --hidden_dim=128 --lr=0.00017927016443032998 --lstm_layers=2 --margin=0.4 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 03:06:53 INFO Running runs: ['a7rzj95d']
+2025-02-28 04:30:59 INFO Cleaning up finished run: a7rzj95d
+2025-02-28 04:30:59 INFO Agent received command: run
+2025-02-28 04:30:59 INFO Agent starting run with config:
+	batch_size: 16
+	checkpoint_dir: /./../model_checkpoints
+	embeddings_dir: ./../data/embeddings
+	frames: 808
+	hidden_dim: 64
+	lr: 0.0009470550156846924
+	lstm_layers: 1
+	margin: 0.4
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 04:30:59 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=16 --checkpoint_dir=/./../model_checkpoints --embeddings_dir=./../data/embeddings --frames=808 --hidden_dim=64 --lr=0.0009470550156846924 --lstm_layers=1 --margin=0.4 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 04:31:04 INFO Running runs: ['bey0uflr']
+2025-02-28 05:51:26 INFO Cleaning up finished run: bey0uflr
+2025-02-28 05:51:27 INFO Agent received command: run
+2025-02-28 05:51:27 INFO Agent starting run with config:
+	batch_size: 32
+	checkpoint_dir: /./../model_checkpoints
+	embeddings_dir: ./../data/embeddings
+	frames: 364
+	hidden_dim: 256
+	lr: 0.00012096339433476754
+	lstm_layers: 1
+	margin: 0.2
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 05:51:27 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=32 --checkpoint_dir=/./../model_checkpoints --embeddings_dir=./../data/embeddings --frames=364 --hidden_dim=256 --lr=0.00012096339433476754 --lstm_layers=1 --margin=0.2 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 05:51:32 INFO Running runs: ['9ii2fbkf']
+2025-02-28 07:18:03 ERROR Detected 5 failed runs in a row, shutting down.
+2025-02-28 07:18:03 INFO To change this value set WANDB_AGENT_MAX_INITIAL_FAILURES=val
+2025-02-28 07:54:31 INFO Running runs: []
+2025-02-28 07:54:32 INFO Agent received command: run
+2025-02-28 07:54:32 INFO Agent starting run with config:
+	batch_size: 128
+	checkpoint_dir: /./../model_checkpoints
+	embeddings_dir: ./../data/embeddings
+	frames: 882
+	hidden_dim: 128
+	lr: 0.0008640346273638608
+	lstm_layers: 1
+	margin: 0.2
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 07:54:32 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=128 --checkpoint_dir=/./../model_checkpoints --embeddings_dir=./../data/embeddings --frames=882 --hidden_dim=128 --lr=0.0008640346273638608 --lstm_layers=1 --margin=0.2 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 07:54:37 INFO Running runs: ['rzsldqkl']
+2025-02-28 08:20:55 ERROR 400 response executing GraphQL.
+2025-02-28 08:20:55 ERROR {"errors":[{"message":"name required for project query","path":["project"]}],"data":{"project":null}}
+2025-02-28 08:20:55 ERROR Traceback (most recent call last):
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 1129, in sweep
+    response = self.gql(
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/cli/cli.py", line 780, in sweep
+    getattr(api, "{}_sweep".format(state))(sweep_id, entity=entity, project=project)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/internal.py", line 146, in stop_sweep
+    return self.api.stop_sweep(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 4529, in stop_sweep
+    self.set_sweep_state(
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 4484, in set_sweep_state
+    s = self.sweep(sweep=sweep, entity=entity, project=project, specs="{}")
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/normalize.py", line 42, in wrapper
+    raise CommError(message, error)
+wandb.errors.errors.CommError: HTTP 400: name required for project query
+
+2025-02-28 08:22:19 ERROR Traceback (most recent call last):
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/cli/cli.py", line 802, in sweep
+    api = _get_cling_api()
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/cli/cli.py", line 132, in _get_cling_api
+    wandb.setup(settings=wandb.Settings(x_cli_only_mode=True))
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/wandb_setup.py", line 382, in setup
+    return _setup(settings=settings)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/wandb_setup.py", line 321, in _setup
+    _singleton.ensure_service()
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/wandb_setup.py", line 264, in ensure_service
+    self._connection = service_connection.connect_to_service(self._settings)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/lib/service_connection.py", line 40, in connect_to_service
+    return _start_and_connect_service(settings)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/lib/service_connection.py", line 75, in _start_and_connect_service
+    proc.start()
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/service/service.py", line 232, in start
+    self._launch_server()
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/service/service.py", line 226, in _launch_server
+    _sentry.reraise(e)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/analytics/sentry.py", line 156, in reraise
+    raise exc.with_traceback(sys.exc_info()[2])
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/service/service.py", line 224, in _launch_server
+    self._wait_for_ports(fname, proc=internal_proc)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/service/service.py", line 121, in _wait_for_ports
+    raise ServiceStartTimeoutError(
+wandb.sdk.service.service.ServiceStartTimeoutError: Timed out waiting for wandb service to start after 30.0 seconds. Try increasing the timeout with the `_service_wait` setting.
+
+2025-02-28 08:26:53 INFO Running runs: []
+2025-02-28 08:26:53 INFO Agent received command: run
+2025-02-28 08:26:53 INFO Agent starting run with config:
+	batch_size: 128
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 631
+	hidden_dim: 128
+	lr: 0.00043612183910147096
+	lstm_layers: 3
+	margin: 0.4
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 08:26:53 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=128 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=631 --hidden_dim=128 --lr=0.00043612183910147096 --lstm_layers=3 --margin=0.4 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 08:26:58 INFO Running runs: ['ova6x0nd']
+2025-02-28 08:27:18 INFO Cleaning up finished run: ova6x0nd
+2025-02-28 08:27:19 INFO Agent received command: run
+2025-02-28 08:27:19 INFO Agent starting run with config:
+	batch_size: 64
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 916
+	hidden_dim: 256
+	lr: 0.0007853990592411792
+	lstm_layers: 2
+	margin: 0.3
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 08:27:19 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=64 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=916 --hidden_dim=256 --lr=0.0007853990592411792 --lstm_layers=2 --margin=0.3 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 08:27:24 INFO Running runs: ['nf8bjtns']
+2025-02-28 08:27:44 INFO Cleaning up finished run: nf8bjtns
+2025-02-28 08:27:45 INFO Agent received command: run
+2025-02-28 08:27:45 INFO Agent starting run with config:
+	batch_size: 128
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 782
+	hidden_dim: 128
+	lr: 0.0001485878081669494
+	lstm_layers: 3
+	margin: 0.2
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 08:27:45 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=128 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=782 --hidden_dim=128 --lr=0.0001485878081669494 --lstm_layers=3 --margin=0.2 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 08:27:50 INFO Running runs: ['46qoxovh']
+2025-02-28 08:28:10 INFO Cleaning up finished run: 46qoxovh
+2025-02-28 08:28:11 INFO Agent received command: run
+2025-02-28 08:28:11 INFO Agent starting run with config:
+	batch_size: 128
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 955
+	hidden_dim: 128
+	lr: 0.005562982957548246
+	lstm_layers: 3
+	margin: 0.2
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 08:28:11 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=128 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=955 --hidden_dim=128 --lr=0.005562982957548246 --lstm_layers=3 --margin=0.2 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 08:28:16 INFO Running runs: ['035ixckg']
+2025-02-28 08:28:36 INFO Cleaning up finished run: 035ixckg
+2025-02-28 08:28:36 INFO Agent received command: run
+2025-02-28 08:28:36 INFO Agent starting run with config:
+	batch_size: 32
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 537
+	hidden_dim: 256
+	lr: 0.0015399886777975329
+	lstm_layers: 3
+	margin: 0.3
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 08:28:36 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=32 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=537 --hidden_dim=256 --lr=0.0015399886777975329 --lstm_layers=3 --margin=0.3 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 08:28:41 INFO Running runs: ['uvr78pjf']
+2025-02-28 08:29:02 ERROR Detected 5 failed runs in a row, shutting down.
+2025-02-28 08:29:02 INFO To change this value set WANDB_AGENT_MAX_INITIAL_FAILURES=val
+2025-02-28 08:29:58 ERROR 400 response executing GraphQL.
+2025-02-28 08:29:58 ERROR {"errors":[{"message":"name required for project query","path":["project"]}],"data":{"project":null}}
+2025-02-28 08:29:58 ERROR Traceback (most recent call last):
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 1129, in sweep
+    response = self.gql(
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/cli/cli.py", line 780, in sweep
+    getattr(api, "{}_sweep".format(state))(sweep_id, entity=entity, project=project)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/internal.py", line 146, in stop_sweep
+    return self.api.stop_sweep(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 4529, in stop_sweep
+    self.set_sweep_state(
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 4484, in set_sweep_state
+    s = self.sweep(sweep=sweep, entity=entity, project=project, specs="{}")
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/normalize.py", line 42, in wrapper
+    raise CommError(message, error)
+wandb.errors.errors.CommError: HTTP 400: name required for project query
+
+2025-02-28 08:33:48 ERROR Traceback (most recent call last):
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 1139, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep PerfectTransitions-scripts/sweeps/de9iz8pe not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/cli/cli.py", line 780, in sweep
+    getattr(api, "{}_sweep".format(state))(sweep_id, entity=entity, project=project)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/internal.py", line 146, in stop_sweep
+    return self.api.stop_sweep(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 4529, in stop_sweep
+    self.set_sweep_state(
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 4484, in set_sweep_state
+    s = self.sweep(sweep=sweep, entity=entity, project=project, specs="{}")
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/normalize.py", line 79, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/data/class/cs175/iklimov/.conda/envs/PT/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 1139, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.errors.CommError: Sweep PerfectTransitions-scripts/sweeps/de9iz8pe not found
+
+2025-02-28 08:36:07 INFO Running runs: []
+2025-02-28 08:36:07 INFO Agent received command: run
+2025-02-28 08:36:07 INFO Agent starting run with config:
+	batch_size: 16
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 846
+	hidden_dim: 128
+	lr: 0.005148214917488606
+	lstm_layers: 3
+	margin: 0.4
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 08:36:07 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=16 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=846 --hidden_dim=128 --lr=0.005148214917488606 --lstm_layers=3 --margin=0.4 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 08:36:12 INFO Running runs: ['niyv5ub7']
+2025-02-28 08:46:47 INFO Running runs: []
+2025-02-28 08:46:48 INFO Agent received command: run
+2025-02-28 08:46:48 INFO Agent starting run with config:
+	batch_size: 16
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 994
+	hidden_dim: 256
+	lr: 0.008272305882633517
+	lstm_layers: 2
+	margin: 0.3
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 08:46:48 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=16 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=994 --hidden_dim=256 --lr=0.008272305882633517 --lstm_layers=2 --margin=0.3 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 08:46:53 INFO Running runs: ['adi2bqr1']
+2025-02-28 08:47:46 INFO Running runs: []
+2025-02-28 08:47:46 INFO Agent received command: run
+2025-02-28 08:47:46 INFO Agent starting run with config:
+	batch_size: 32
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 325
+	hidden_dim: 256
+	lr: 0.008079080202906331
+	lstm_layers: 2
+	margin: 0.2
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 08:47:46 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=32 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=325 --hidden_dim=256 --lr=0.008079080202906331 --lstm_layers=2 --margin=0.2 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 08:47:47 INFO Running runs: []
+2025-02-28 08:47:48 INFO Agent received command: run
+2025-02-28 08:47:48 INFO Agent starting run with config:
+	batch_size: 16
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 211
+	hidden_dim: 64
+	lr: 0.0029468841460539197
+	lstm_layers: 3
+	margin: 0.4
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 08:47:48 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=16 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=211 --hidden_dim=64 --lr=0.0029468841460539197 --lstm_layers=3 --margin=0.4 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 08:47:53 INFO Running runs: ['2iipytka']
+ 08:47:53 INFO Agent received command: run
+2025-02-28 08:47:53 INFO Agent starting run with config:
+	batch_size: 64
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 373
+	hidden_dim: 256
+	lr: 0.00848491520265076
+	lstm_layers: 2
+	margin: 0.2
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 08:47:53 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=64 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=373 --hidden_dim=256 --lr=0.00848491520265076 --lstm_layers=2 --margin=0.2 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 08:47:58 INFO Running runs: ['lrlae3w2']
+2025-02-28 10:21:10 ERROR 502 response executing GraphQL.
+2025-02-28 10:21:10 ERROR 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2025-02-28 13:26:14 INFO Cleaning up finished run: rzsldqkl
+2025-02-28 13:26:15 INFO Agent received command: run
+2025-02-28 13:26:15 INFO Agent starting run with config:
+	batch_size: 64
+	checkpoint_dir: /./../model_checkpoints
+	embeddings_dir: ./../data/embeddings
+	frames: 685
+	hidden_dim: 256
+	lr: 0.000265996416309048
+	lstm_layers: 1
+	margin: 0.2
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 13:26:15 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=64 --checkpoint_dir=/./../model_checkpoints --embeddings_dir=./../data/embeddings --frames=685 --hidden_dim=256 --lr=0.000265996416309048 --lstm_layers=1 --margin=0.2 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 13:26:20 INFO Running runs: ['2489tbp4']
+2025-02-28 14:42:48 INFO Running runs: []
+2025-02-28 14:42:48 INFO Agent received command: run
+2025-02-28 14:42:48 INFO Agent starting run with config:
+	batch_size: 64
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 758
+	hidden_dim: 128
+	lr: 0.0007348874637368603
+	lstm_layers: 2
+	margin: 0.3
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 14:42:48 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=64 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=758 --hidden_dim=128 --lr=0.0007348874637368603 --lstm_layers=2 --margin=0.3 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 14:42:53 INFO Running runs: ['sl8yo7w8']
+2025-02-28 14:50:37 INFO Running runs: []
+2025-02-28 14:50:37 INFO Agent received command: run
+2025-02-28 14:50:37 INFO Agent starting run with config:
+	batch_size: 128
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 649
+	hidden_dim: 256
+	lr: 0.00019257766899766465
+	lstm_layers: 1
+	margin: 0.4
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 14:50:37 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=128 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=649 --hidden_dim=256 --lr=0.00019257766899766465 --lstm_layers=1 --margin=0.4 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 14:50:42 INFO Running runs: ['27flfezg']
+2025-02-28 18:54:36 INFO Cleaning up finished run: 2489tbp4
+2025-02-28 18:54:36 INFO Agent received command: run
+2025-02-28 18:54:36 INFO Agent starting run with config:
+	batch_size: 32
+	checkpoint_dir: /./../model_checkpoints
+	embeddings_dir: ./../data/embeddings
+	frames: 1000
+	hidden_dim: 256
+	lr: 0.002590448067233339
+	lstm_layers: 1
+	margin: 0.3
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-02-28 18:54:36 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=32 --checkpoint_dir=/./../model_checkpoints --embeddings_dir=./../data/embeddings --frames=1000 --hidden_dim=256 --lr=0.002590448067233339 --lstm_layers=1 --margin=0.3 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-02-28 18:54:41 INFO Running runs: ['340y5ags']
+2025-02-28 20:20:55 ERROR 502 response executing GraphQL.
+2025-02-28 20:20:55 ERROR 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2025-03-01 03:13:25 INFO Cleaning up finished run: sl8yo7w8
+2025-03-01 03:13:25 INFO Agent received command: run
+2025-03-01 03:13:25 INFO Agent starting run with config:
+	batch_size: 64
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 985
+	hidden_dim: 128
+	lr: 0.0010793053216206396
+	lstm_layers: 3
+	margin: 0.3
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-03-01 03:13:25 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=64 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=985 --hidden_dim=128 --lr=0.0010793053216206396 --lstm_layers=3 --margin=0.3 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-03-01 03:13:30 INFO Running runs: ['mz13hpj2']
+2025-03-01 05:04:57 INFO Cleaning up finished run: 27flfezg
+2025-03-01 05:04:57 INFO Agent received command: run
+2025-03-01 05:04:57 INFO Agent starting run with config:
+	batch_size: 64
+	checkpoint_dir: ./../model_checkpoints/lstm/
+	embeddings_dir: ./../data/embeddings
+	frames: 760
+	hidden_dim: 128
+	lr: 0.0006265058329531033
+	lstm_layers: 2
+	margin: 0.3
+	max_epochs: 50
+	patience: 10
+	resume_if_checkpoint_exists: False
+2025-03-01 05:04:57 INFO About to run command: /usr/bin/env python train_lstm.py --batch_size=64 --checkpoint_dir=./../model_checkpoints/lstm/ --embeddings_dir=./../data/embeddings --frames=760 --hidden_dim=128 --lr=0.0006265058329531033 --lstm_layers=2 --margin=0.3 --max_epochs=50 --patience=10 --resume_if_checkpoint_exists=False
+2025-03-01 05:05:02 INFO Running runs: ['glrqlad1']

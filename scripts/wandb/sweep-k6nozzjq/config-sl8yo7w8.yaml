@@ -1,0 +1,24 @@
+wandb_version: 1
+
+batch_size:
+  value: 64
+checkpoint_dir:
+  value: ./../model_checkpoints/lstm/
+embeddings_dir:
+  value: ./../data/embeddings
+frames:
+  value: 758
+hidden_dim:
+  value: 128
+lr:
+  value: 0.0007348874637368603
+lstm_layers:
+  value: 2
+margin:
+  value: 0.3
+max_epochs:
+  value: 50
+patience:
+  value: 10
+resume_if_checkpoint_exists:
+  value: false

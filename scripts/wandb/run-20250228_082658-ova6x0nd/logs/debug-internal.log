@@ -1,0 +1,105 @@
+2025-02-28 08:26:58,260 INFO    StreamThr :1757653 [internal.py:wandb_internal():83] W&B internal server running at pid: 1757653, started at: 2025-02-28 08:26:58.259070
+2025-02-28 08:26:58,262 INFO    WriterThread:1757653 [datastore.py:open_for_write():87] open: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/run-ova6x0nd.wandb
+2025-02-28 08:26:58,478 INFO    SenderThread:1757653 [dir_watcher.py:__init__():211] watching files in: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files
+2025-02-28 08:26:58,478 INFO    SenderThread:1757653 [sender.py:_start_run_threads():1133] run started: ova6x0nd with start time 1740760018.257749
+2025-02-28 08:26:58,494 INFO    HandlerThread:1757653 [system_monitor.py:start():187] Starting system monitor
+2025-02-28 08:26:58,495 INFO    SystemMonitor:1757653 [system_monitor.py:_start():151] Starting system asset monitoring threads
+2025-02-28 08:26:58,495 INFO    HandlerThread:1757653 [system_monitor.py:probe():207] Collecting system info
+2025-02-28 08:26:58,495 INFO    SystemMonitor:1757653 [interfaces.py:start():186] Started cpu monitoring
+2025-02-28 08:26:58,496 INFO    SystemMonitor:1757653 [interfaces.py:start():186] Started disk monitoring
+2025-02-28 08:26:58,497 INFO    SystemMonitor:1757653 [interfaces.py:start():186] Started gpu monitoring
+2025-02-28 08:26:58,497 INFO    SystemMonitor:1757653 [interfaces.py:start():186] Started memory monitoring
+2025-02-28 08:26:58,498 INFO    SystemMonitor:1757653 [interfaces.py:start():186] Started network monitoring
+2025-02-28 08:26:58,527 INFO    HandlerThread:1757653 [system_monitor.py:probe():217] Finished collecting system info
+2025-02-28 08:26:58,527 INFO    HandlerThread:1757653 [system_monitor.py:probe():220] Publishing system info
+2025-02-28 08:26:59,479 INFO    Thread-12 :1757653 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/conda-environment.yaml
+2025-02-28 08:27:03,298 INFO    HandlerThread:1757653 [system_monitor.py:probe():222] Finished publishing system info
+2025-02-28 08:27:03,303 INFO    SenderThread:1757653 [sender.py:_save_file():1402] saving file wandb-metadata.json with policy now
+2025-02-28 08:27:03,479 INFO    Thread-12 :1757653 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/conda-environment.yaml
+2025-02-28 08:27:03,479 INFO    Thread-12 :1757653 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/requirements.txt
+2025-02-28 08:27:03,480 INFO    Thread-12 :1757653 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/wandb-metadata.json
+2025-02-28 08:27:03,652 INFO    wandb-upload_0:1757653 [upload_job.py:push():130] Uploaded file /tmp/iklimov/36250143/tmpariv7q3swandb/mbznjfom-wandb-metadata.json
+2025-02-28 08:27:11,712 INFO    SenderThread:1757653 [sender.py:send_exit():553] handling exit code: 1
+2025-02-28 08:27:11,712 INFO    SenderThread:1757653 [sender.py:send_exit():555] handling runtime: 13
+2025-02-28 08:27:11,713 INFO    SenderThread:1757653 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-02-28 08:27:11,714 INFO    SenderThread:1757653 [sender.py:send_exit():561] send defer
+2025-02-28 08:27:11,714 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 0
+2025-02-28 08:27:11,714 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 0
+2025-02-28 08:27:11,714 INFO    SenderThread:1757653 [sender.py:transition_state():581] send defer: 1
+2025-02-28 08:27:11,714 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 1
+2025-02-28 08:27:11,714 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 1
+2025-02-28 08:27:11,714 INFO    SenderThread:1757653 [sender.py:transition_state():581] send defer: 2
+2025-02-28 08:27:11,714 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 2
+2025-02-28 08:27:11,714 INFO    HandlerThread:1757653 [system_monitor.py:finish():196] Stopping system monitor
+2025-02-28 08:27:11,715 INFO    HandlerThread:1757653 [interfaces.py:finish():198] Joined cpu monitor
+2025-02-28 08:27:11,715 INFO    HandlerThread:1757653 [interfaces.py:finish():198] Joined disk monitor
+2025-02-28 08:27:11,786 INFO    HandlerThread:1757653 [interfaces.py:finish():198] Joined gpu monitor
+2025-02-28 08:27:11,786 INFO    HandlerThread:1757653 [interfaces.py:finish():198] Joined memory monitor
+2025-02-28 08:27:11,786 INFO    HandlerThread:1757653 [interfaces.py:finish():198] Joined network monitor
+2025-02-28 08:27:11,787 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 2
+2025-02-28 08:27:11,787 INFO    SenderThread:1757653 [sender.py:transition_state():581] send defer: 3
+2025-02-28 08:27:11,787 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 3
+2025-02-28 08:27:11,787 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 3
+2025-02-28 08:27:11,787 INFO    SenderThread:1757653 [sender.py:transition_state():581] send defer: 4
+2025-02-28 08:27:11,787 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 4
+2025-02-28 08:27:11,787 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 4
+2025-02-28 08:27:11,788 INFO    SenderThread:1757653 [sender.py:transition_state():581] send defer: 5
+2025-02-28 08:27:11,788 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 5
+2025-02-28 08:27:11,789 INFO    SenderThread:1757653 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-02-28 08:27:11,789 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 5
+2025-02-28 08:27:11,789 INFO    SenderThread:1757653 [sender.py:transition_state():581] send defer: 6
+2025-02-28 08:27:11,789 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 6
+2025-02-28 08:27:11,790 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 6
+2025-02-28 08:27:11,924 INFO    SenderThread:1757653 [sender.py:transition_state():581] send defer: 7
+2025-02-28 08:27:11,924 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 7
+2025-02-28 08:27:11,924 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 7
+2025-02-28 08:27:12,482 INFO    Thread-12 :1757653 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/config.yaml
+2025-02-28 08:27:12,482 INFO    Thread-12 :1757653 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/wandb-summary.json
+2025-02-28 08:27:12,482 INFO    Thread-12 :1757653 [dir_watcher.py:_on_file_created():271] file/dir created: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/output.log
+2025-02-28 08:27:13,677 INFO    SenderThread:1757653 [sender.py:transition_state():581] send defer: 8
+2025-02-28 08:27:13,677 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 8
+2025-02-28 08:27:13,677 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 8
+2025-02-28 08:27:13,677 INFO    SenderThread:1757653 [sender.py:transition_state():581] send defer: 9
+2025-02-28 08:27:13,677 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 9
+2025-02-28 08:27:13,677 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 9
+2025-02-28 08:27:13,677 INFO    SenderThread:1757653 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-02-28 08:27:14,482 INFO    Thread-12 :1757653 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/output.log
+2025-02-28 08:27:14,483 INFO    SenderThread:1757653 [dir_watcher.py:finish():388] scan: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files
+2025-02-28 08:27:14,483 INFO    SenderThread:1757653 [dir_watcher.py:finish():402] scan save: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/output.log output.log
+2025-02-28 08:27:14,483 INFO    SenderThread:1757653 [dir_watcher.py:finish():402] scan save: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/conda-environment.yaml conda-environment.yaml
+2025-02-28 08:27:14,485 INFO    SenderThread:1757653 [dir_watcher.py:finish():402] scan save: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/config.yaml config.yaml
+2025-02-28 08:27:14,487 INFO    SenderThread:1757653 [dir_watcher.py:finish():402] scan save: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/wandb-metadata.json wandb-metadata.json
+2025-02-28 08:27:14,487 INFO    SenderThread:1757653 [dir_watcher.py:finish():402] scan save: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/requirements.txt requirements.txt
+2025-02-28 08:27:14,489 INFO    SenderThread:1757653 [dir_watcher.py:finish():402] scan save: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/wandb-summary.json wandb-summary.json
+2025-02-28 08:27:14,491 INFO    SenderThread:1757653 [sender.py:transition_state():581] send defer: 10
+2025-02-28 08:27:14,491 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 10
+2025-02-28 08:27:14,493 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 10
+2025-02-28 08:27:14,494 INFO    SenderThread:1757653 [file_pusher.py:finish():169] shutting down file pusher
+2025-02-28 08:27:14,762 INFO    wandb-upload_0:1757653 [upload_job.py:push():130] Uploaded file /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/output.log
+2025-02-28 08:27:14,766 INFO    wandb-upload_1:1757653 [upload_job.py:push():130] Uploaded file /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/conda-environment.yaml
+2025-02-28 08:27:14,772 INFO    wandb-upload_4:1757653 [upload_job.py:push():130] Uploaded file /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/wandb-summary.json
+2025-02-28 08:27:14,789 INFO    wandb-upload_2:1757653 [upload_job.py:push():130] Uploaded file /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/config.yaml
+2025-02-28 08:27:14,801 INFO    wandb-upload_3:1757653 [upload_job.py:push():130] Uploaded file /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/files/requirements.txt
+2025-02-28 08:27:15,001 INFO    Thread-11 (_thread_body):1757653 [sender.py:transition_state():581] send defer: 11
+2025-02-28 08:27:15,002 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 11
+2025-02-28 08:27:15,002 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 11
+2025-02-28 08:27:15,002 INFO    SenderThread:1757653 [file_pusher.py:join():175] waiting for file pusher
+2025-02-28 08:27:15,002 INFO    SenderThread:1757653 [sender.py:transition_state():581] send defer: 12
+2025-02-28 08:27:15,002 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 12
+2025-02-28 08:27:15,002 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 12
+2025-02-28 08:27:15,002 INFO    SenderThread:1757653 [file_stream.py:finish():601] file stream finish called
+2025-02-28 08:27:15,119 INFO    SenderThread:1757653 [file_stream.py:finish():605] file stream finish is done
+2025-02-28 08:27:15,119 INFO    SenderThread:1757653 [sender.py:transition_state():581] send defer: 13
+2025-02-28 08:27:15,120 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 13
+2025-02-28 08:27:15,120 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 13
+2025-02-28 08:27:15,120 INFO    SenderThread:1757653 [sender.py:transition_state():581] send defer: 14
+2025-02-28 08:27:15,120 INFO    HandlerThread:1757653 [handler.py:handle_request_defer():188] handle defer: 14
+2025-02-28 08:27:15,120 INFO    SenderThread:1757653 [sender.py:send_request_defer():577] handle sender defer: 14
+2025-02-28 08:27:15,122 INFO    MainThread:1757653 [wandb_run.py:_footer_history_summary_info():3958] rendering history
+2025-02-28 08:27:15,122 INFO    MainThread:1757653 [wandb_run.py:_footer_history_summary_info():3990] rendering summary
+2025-02-28 08:27:15,122 INFO    MainThread:1757653 [wandb_run.py:_footer_sync_info():3919] logging synced files
+2025-02-28 08:27:15,122 INFO    HandlerThread:1757653 [handler.py:finish():897] shutting down handler
+2025-02-28 08:27:16,121 INFO    WriterThread:1757653 [datastore.py:close():296] close: /data/class/cs175/iklimov/PerfectTransitions/scripts/wandb/run-20250228_082658-ova6x0nd/run-ova6x0nd.wandb
+2025-02-28 08:27:16,121 INFO    SenderThread:1757653 [sender.py:finish():1580] shutting down sender
+2025-02-28 08:27:16,121 INFO    SenderThread:1757653 [file_pusher.py:finish():169] shutting down file pusher
+2025-02-28 08:27:16,121 INFO    SenderThread:1757653 [file_pusher.py:join():175] waiting for file pusher

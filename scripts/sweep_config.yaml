@@ -29,6 +29,6 @@ parameters:
   embeddings_dir:
     value: ./../data/embeddings
   checkpoint_dir:
-    value: /./../model_checkpoints
+    value: ./../model_checkpoints/lstm/
   resume_if_checkpoint_exists:
     value: false
