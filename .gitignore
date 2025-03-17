@@ -1,4 +1,5 @@
 # Ignore everything inside the data folder
+data/fma_medium/*
 data/fma/*
 data/segments/*
 data/embeddings/*

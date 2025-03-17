@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH -A cs175_class ## Account to charge
+#SBATCH -A cs175_class_gpu ## Account to charge
 #SBATCH --time=16:00:00 ## Maximum running time of program
 #SBATCH --nodes=1 ## Number of nodes.
 ## Set to 1 if you are using GPU.
-#SBATCH --partition=standard ## Partition name
+#SBATCH --partition=free-gpu ## Partition name
 #SBATCH --mem=64GB ## Allocated Memory
 #SBATCH --cpus-per-task=8 ## Number of CPU cores
 #SBATCH --output=SLURMlogs/song_segment_%j.out
@@ -29,8 +29,8 @@ echo "Starting song segmentation job on $HOSTNAME"
 # --- Run Python Script ---
 # If you have checkpoint logic in feature_extraction.py, pass --resume if needed.
 
-python song_segmentation.py \
-    --input_dir ./../data/fma/zip/fma_full/fma_full/ \
+srun python song_segmentation.py \
+    --input_dir ./../data/fma_medium/ \
     --output_dir ./../data/segments \
-    --segment_length 10 \
-    --overlap 1
+    --segment_length 5 \
+    --overlap 0
