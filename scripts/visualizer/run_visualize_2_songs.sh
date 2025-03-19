@@ -8,13 +8,13 @@
 #SBATCH --output=SLURMlogs/visualize_unified_embeddings_%j.out
 #SBATCH --error=SLURMlogs/visualize_unified_embeddings_%j.err
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=<YOUR_EMAIL>
+#SBATCH --mail-user=iklimov@uci.edu
 
 srun python visualize_unified_embeddings.py \
     --embeddings_dir ./../data/embeddings \
-    --method tsne \
+    --method pca \
     --dim 2 \
+    --songA 005002 \
+    --songB 029959 \
     --recursive \
-    --max_samples 10000 \
     --perplexity 40
-

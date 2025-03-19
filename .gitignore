@@ -1,9 +1,12 @@
 # Ignore everything inside the data folder
 data/fma_medium/*
 data/fma/*
+data/fma_metadata/*
+data/fma_metadata.zip
 data/segments/*
 data/embeddings/*
 model_checkpoints/BEATs_iter3_plus_AS2M.pt
 *.err
 *.out
 scripts/__pycache__/my_beats_model.cpython-310.pyc
+scripts/embedding_visualizations/*

@@ -8,7 +8,7 @@
 #SBATCH --output=SLURMlogs/feature_extract_%j.out
 #SBATCH --error=SLURMlogs/feature_extract_%j.err
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=Ilya2000Klimov@gmail.com
+#SBATCH --mail-user=iklimov@uci.edu
 
 # --- Load Modules/Environment ---
 module load cuda/12.1

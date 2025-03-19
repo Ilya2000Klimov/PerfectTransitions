@@ -4,11 +4,12 @@ visualize_unified_embeddings.py
 
 1) Loads all .npy embeddings from a directory (including subdirectories if needed).
    This can be your entire dataset across train/val/test, or a single folder.
-2) Aggregates them into a single space (sums or mean across time dimension),
+2) Aggregates them into a single space (average across time dimension),
    then applies t-SNE or PCA to reduce to 2D or 3D.
 3) Plots all embeddings color-coded by song ID.
 4) If user specifies --songA and/or --songB, those songs are highlighted in special colors,
    and all other songs are shown in a more neutral palette.
+5) **Now also saves the resulting plot** to a folder named `embedding_visualizations/`.
 
 Example usage:
   python visualize_unified_embeddings.py \
@@ -16,8 +17,8 @@ Example usage:
       --method tsne \
       --dim 2 \
       --songA 014890 \
-      --songB 008202
-
+      --songB 008202 \
+      --recursive
 """
 
 import os
@@ -141,13 +142,9 @@ def main():
     if args.songA: highlight_songs.add(args.songA)
     if args.songB: highlight_songs.add(args.songB)
 
-    # If we highlight 2 songs => those get distinct colors (red, blue).
-    # Others => lightgray. If no highlight => each song => unique color (like previous code).
     if highlight_songs:
-        # We'll do:
-        #  - songA => red
-        #  - songB => blue
-        #  - all others => lightgray
+        # If we highlight 2 songs => those get distinct colors (red, blue).
+        # Others => lightgray
         colors = []
         for sid in song_ids:
             if sid == args.songA:
@@ -158,30 +155,42 @@ def main():
                 colors.append("lightgray")
     else:
         # color each distinct song ID
-        unique_songs = sorted(list(set(song_ids)))
-        # create a color map
         import matplotlib.colors as mcolors
+        unique_songs = sorted(list(set(song_ids)))
         palette = list(mcolors.TABLEAU_COLORS.keys()) + list(mcolors.CSS4_COLORS.keys())
-        # map each song to an integer => color
         color_map = {song: i for i, song in enumerate(unique_songs)}
+
         def get_color(idx):
             return palette[idx % len(palette)]
+
         colors = [get_color(color_map[sid]) for sid in song_ids]
 
-    # 4) Plot
     fig_title = f"{args.method.upper()}({args.dim}D) of All Embeddings"
     if args.songA or args.songB:
         songs_to_show = " & ".join([s for s in [args.songA, args.songB] if s])
         fig_title += f" [Highlighting: {songs_to_show}]"
 
+    # Create a folder to save the plot
+    save_dir = "embedding_visualizations"
+    os.makedirs(save_dir, exist_ok=True)
+
+    # Construct a filename for saving
+    # e.g. "tsne_2D.png" or "pca_3D_highlight_014890_008202.png"
+    save_basename = f"{args.method}_{args.dim}D"
+    if args.songA or args.songB:
+        highlight_str = "_".join([s for s in [args.songA, args.songB] if s])
+        save_basename += f"_highlight_{highlight_str}"
+    save_path = os.path.join(save_dir, save_basename + ".png")
+
+    # 4) Plot & Save
     if args.dim == 2:
         plt.figure(figsize=(10, 7))
         plt.scatter(reduced[:, 0], reduced[:, 1], c=colors, alpha=0.7, s=20)
         plt.title(fig_title)
         plt.xlabel("Dim 1")
         plt.ylabel("Dim 2")
+        plt.savefig(save_path, dpi=300)
         plt.show()
-
     else:  # dim=3
         from mpl_toolkits.mplot3d import Axes3D
         fig = plt.figure(figsize=(10, 7))
@@ -192,7 +201,11 @@ def main():
         ax.set_xlabel("Dim 1")
         ax.set_ylabel("Dim 2")
         ax.set_zlabel("Dim 3")
+
+        plt.savefig(save_path, dpi=300)
         plt.show()
+
+    print(f"[✅] Plot saved to: {save_path}")
 
 if __name__ == "__main__":
     main()

@@ -9,7 +9,7 @@
 #SBATCH --output=SLURMlogs/song_segment_%j.out
 #SBATCH --error=SLURMlogs/song_segment_%j.err
 #SBATCH --mail-type=END,FAIL          # get emails for end/fail
-#SBATCH --mail-user=Ilya2000Klimov@gmail.com       # your email address
+#SBATCH --mail-user=iklimov@uci.edu       # your email address
 ## Don't change the GPU numbers.
 
 

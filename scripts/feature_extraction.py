@@ -6,7 +6,6 @@ import librosa
 
 import sys
 sys.path.append('/data/class/cs175/iklimov/unilm/beats')
-
 from BEATs import BEATs, BEATsConfig
 
 ############################################################
@@ -36,47 +35,31 @@ def compute_beats_embeddings(audio_path, model, device, sr=16000, mono=True):
     4) Use model.extract_features(...) to get the audio representation.
     5) Return a (T x D) numpy array of embeddings.
     """
-    # 1) Load audio with librosa.
-    #    - sr=16000 means librosa will resample if needed.
-    #    - mono=True means we reduce everything to 1 channel.
     y, source_sr = librosa.load(audio_path, sr=sr, mono=mono)
     print(f"[Debug] Loaded audio from {audio_path} with shape {y.shape} and sample rate {source_sr}")
-    # 2) Convert to torch Tensor
-    #    If mono=True, y.shape -> (num_samples,)
-    #    If mono=False, y.shape -> (num_channels, num_samples)
+
     if y.ndim == 1:
-        # shape (num_samples,)
         waveform = torch.from_numpy(y).unsqueeze(0)  # -> (1, num_samples)
     else:
-        # shape (num_channels, num_samples)
         waveform = torch.from_numpy(y)
 
     waveform = waveform.to(device)
 
-    # # 3) Expand for BEATs (batch dimension)
-    # #    Now shape = (batch=1, num_channels, num_samples)
-    # waveform = waveform.unsqueeze(0)
-
-    # 4) Create a padding mask [batch, num_samples]
-    #    The model expects no padding if entire clip is valid
+    # Create a padding mask [batch=1, time]
     padding_mask = torch.zeros((1, waveform.shape[-1]), dtype=torch.bool, device=device)
 
-
-    # 5) Extract features with no grad
     with torch.no_grad():
         print(f"[Debug] Waveform shape: {waveform.shape}, Padding mask shape: {padding_mask.shape}")
         out_tuple = model.extract_features(waveform, padding_mask=padding_mask)
-        print(f"[Debug] Loaded audio from {audio_path}, After model extraction tuple == {out_tuple}" )
-        # out_tuple might be (features, layer_results) or just features.
+        print(f"[Debug] After model.extract_features(...) => {out_tuple}")
+
         if isinstance(out_tuple, (list, tuple)) and len(out_tuple) >= 1:
             feats = out_tuple[0]  # shape: (1, T, D)
         else:
             feats = out_tuple
 
-    # shape: [1, T, D]
-    feats = feats.squeeze(0)  # (T, D)
-
-    return feats.cpu().numpy()
+    # Remove batch dimension => (T, D)
+    return feats.squeeze(0).cpu().numpy()
 
 ############################################################
 # 3) Arg Parsing
@@ -106,16 +89,23 @@ def main():
     print(f"[Info] Using device: {device}")
 
     # 2) Load BEATs model
-    beats_model = load_beats_model(args.model_checkpoint)
-    beats_model = beats_model.to(device)
+    beats_model = load_beats_model(args.model_checkpoint).to(device)
     beats_model.eval()
 
-    # 3) Gather audio files
-    audio_files = sorted([
-        os.path.join(args.data_dir, f)
-        for f in os.listdir(args.data_dir)
-        if f.lower().endswith((".wav", ".flac", ".mp3"))
-    ])
+    # 3) Gather audio files "song_segmentation" style
+    audio_files = []
+    for root, _, files in os.walk(args.data_dir):
+        # Optional: Print a debug message like in 'song_segmentation.py'
+        print(f"\n📂 Entering directory: {root}")
+
+        for f in files:
+            # If it's a valid audio extension
+            if f.lower().endswith((".wav", ".mp3", ".flac")):
+                audio_path = os.path.join(root, f)
+                audio_files.append(audio_path)
+
+    # Sort them for consistent processing order
+    audio_files.sort()
     print(f"[Info] Found {len(audio_files)} audio files in {args.data_dir}")
 
     # 4) Resume logic
@@ -141,13 +131,9 @@ def main():
         # Extract embeddings
         try:
             embedding = compute_beats_embeddings(
-                audio_path,
-                model=beats_model,
-                device=device,
-                sr=16000,
-                mono=True
-            )  # shape: (T, D)
-
+                audio_path, model=beats_model, device=device,
+                sr=16000, mono=True
+            )
             # (Optional) L2 normalization
             norms = np.linalg.norm(embedding, axis=1, keepdims=True)
             norms[norms == 0] = 1e-9
@@ -155,6 +141,7 @@ def main():
 
             # Save the result
             np.save(embedding_path, embedding)
+            print(f"[Saved] => {embedding_path}")
 
         except Exception as e:
             print(f"[Error] {audio_path}: {e}")
