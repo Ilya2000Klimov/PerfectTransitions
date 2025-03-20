@@ -76,14 +76,18 @@ Given the nature of our project, qualitative evaluation mainly relies on human p
 
 #### - Stage 1 Model transition
 
+<audio controls>
+  <source src="./res/stage1_cont.wav" type="audio/wav">
+</audio>
 
+This is audio transition that was selected from stage 1. While stage 1 is pretty basic, but due to it favor picking transition that is from the same genre, sometimes it will produce a perfect transition.
 
 #### - Stage 3 Mock Demo
 
 Due to the complications mentioned earlier, we were unable to use our own song-generation model. However, we still wanted to demonstrate the performance and limitations of our Stage 3 Generative Predictive AI approach.
 To this end, we created a mock demo using Suno AI for song generation. In the demo, we input the “transitioned-from” song into Suno AI and asked it to extend the track. We then converted both the extended audio and our music database into array representations of their spectrograms. A cosine similarity search was conducted to identify the best-matching clip for a seamless transition.
 
-Suno AI generated extension:
+#### - Suno AI generated extension:
 
 <audio controls>
   <source src="./res/Ai_generated_cont.wav" type="audio/wav">
@@ -112,4 +116,14 @@ If we closely examine the spectrogram, we can detect subtle similarities between
 
 ## References
 
+- **Triplet Loss**:
+  - Hoffer & Ailon (2015): “Deep Metric Learning Using Triplet Network”
+  - [Faiss: Facebook AI Similarity Search](https://github.com/facebookresearch/faiss)
+  - [Shazam Music Processing Fingerprinting and Recognition] (https://www.toptal.com/algorithms/shazam-it-music-processing-fingerprinting-and-recognition)
+
+- **Dataset:** [FMA](https://github.com/mdeff/fma?tab=readme-ov-file)
 ## AI Tool Usage
+
+- **BEATs Transformer Model** (Microsoft UniLM):
+
+- **Suno AI**
