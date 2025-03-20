@@ -122,6 +122,7 @@ If we closely examine the spectrogram, we can detect subtle similarities between
   - [Shazam Music Processing Fingerprinting and Recognition] (https://www.toptal.com/algorithms/shazam-it-music-processing-fingerprinting-and-recognition)
 
 - **Dataset:** [FMA](https://github.com/mdeff/fma?tab=readme-ov-file)
+
 ## AI Tool Usage
 
 - **BEATs Transformer Model** (Microsoft UniLM):
