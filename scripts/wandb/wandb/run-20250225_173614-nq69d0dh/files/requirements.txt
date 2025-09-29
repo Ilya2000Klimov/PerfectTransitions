@@ -23,7 +23,7 @@ typing_extensions==4.12.2
 appdirs==1.4.4
 hpack==4.1.0
 audioread==3.0.1
-protobuf==5.28.3
+protobuf==5.29.5
 Brotli==1.1.0
 packaging==24.2
 PySocks==1.7.1
